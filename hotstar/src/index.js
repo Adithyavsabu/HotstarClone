@@ -1,19 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from './Components/Login';
+import './index.css'
+import App from './App.js';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<BrowserRouter>
-<Routes>
+<React.StrictMode>
+  <App/>
+</React.StrictMode>
 
-<Route exact path="/" element={<Login/>} />
- 
-</Routes>
-</BrowserRouter>
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

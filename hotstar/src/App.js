@@ -1,11 +1,17 @@
 
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './Pages/Login/Login';
+import {Header} from "./Components/Header";
 
 function App() {
   return (
-    <div className="App">
-   <h2>DISNEY PLUS HOTSTAR CLONE </h2>
-    </div>
+    <BrowserRouter>
+    <Header/>
+    <Routes>
+    <Route exact path="/" element={<Login/>} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
