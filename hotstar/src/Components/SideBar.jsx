@@ -11,7 +11,7 @@ export const SideBar=(  )=>{
           </subscribe>
             <NavMenu>
             <a href="/mypage">
-                  <img src="/images/home-icon.svg" alt="HOME" />
+                  <img src="/images/user-icon.svg" alt="HOME" />
                   <span>My Space</span>
                 </a>
                 <a href="/explore">
