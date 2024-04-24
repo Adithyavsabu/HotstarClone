@@ -5,10 +5,12 @@ export const SideBar=(  )=>{
         <NavBar>
         <Logo>
             <img src="/images/logo-d-plus.svg" alt="Disney+" />
+            <span>
+            <span>Subscribe</span>
+            <img src="/images/forward.svg" alt="forward"/>
+          </span>
           </Logo>
-          <subscribe>
-            <a></a>
-          </subscribe>
+          
             <NavMenu>
             <a href="/mypage">
                   <img src="/images/user-icon.svg" alt="HOME" />
