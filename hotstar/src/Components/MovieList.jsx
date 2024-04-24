@@ -7,19 +7,7 @@ import { TrailerPreview } from "./TrailerPreview";
 
 
 export const MovieList = () =>{
-        const [scrollPosition, setScrollPosition] = useState(0);
-      
-        useEffect(() => {
-          const handleScroll = () => {
-            setScrollPosition(window.scrollY);
-          };
-      
-          window.addEventListener("scroll", handleScroll);
-      
-          return () => {
-            window.removeEventListener("scroll", handleScroll);
-          };
-        }, []);
+        
 
     return(
      <Moviecontainer>
@@ -87,9 +75,7 @@ export const MovieList = () =>{
               </Link> 
         </Content>
         </Recommend>
-        {scrollPosition <= 30  && <TrailerPreview/>}
-      {scrollPosition > 30 && <PreviewBackground />}
-
+       
      </Moviecontainer>
     );
 }

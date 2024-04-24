@@ -7,6 +7,10 @@ export const Container = styled.main`
   min-height: 100vh;
   display: block;
   top: 72px;
+
+ 
+
+ 
   
 
 

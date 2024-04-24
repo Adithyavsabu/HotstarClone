@@ -14,10 +14,11 @@ export const NavBar = styled.nav`
   align-items: center;
   padding: 20 0px;
   width: 9vw;
-  z-index: 3;
+  z-index: 100;
   max-width: 300px;
   opacity: 0.5;
- 
+  box-shadow: inset 10px 0 10px #000;   
+
 `;
 
 export const Logo = styled.a`

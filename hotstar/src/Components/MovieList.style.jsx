@@ -4,12 +4,15 @@ export const Moviecontainer = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-   
     width: 100%;
     padding: 0 0 26px;
     position: absolute;
     z-index: 1;
     top: 60vh;   
+    @media (max-width: 768px) {
+        top: 100vh;
+    }
+    box-shadow: 0 10px 10px #000;
    
 
 @media (max-width: 768px) {
