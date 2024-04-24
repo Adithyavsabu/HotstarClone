@@ -13,7 +13,7 @@ export const NavBar = styled.nav`
   justify-content: space-around;
   align-items: center;
   padding: 20 0px;
-  width: 120px;
+  width: 9vw;
   z-index: 3;
   max-width: 300px;
   opacity: 0.5;
@@ -22,7 +22,7 @@ export const NavBar = styled.nav`
 
 export const Logo = styled.a`
   padding: 0;
-  width: 60px;
+  width: 50px;
   margin-top: 20px;
   max-height: 70px;
   font-size: 0;

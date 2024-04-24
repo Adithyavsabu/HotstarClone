@@ -1,14 +1,14 @@
-import {SideBar} from "../../Components/SideBar";
-import { Container } from "../Login/Login.style";
-import videoBg from "../../assets/videos/videoBg.mp4";
-import { Video } from "./Home.style";
+
+import { Container } from "./Home.style";
+import { TrailerPreview } from "../../Components/TrailerPreview";
+import { MovieList } from "../../Components/MovieList";
 
 
 const Home = ()=>{
     return(
 <Container>
-<SideBar />
-<Video src={videoBg} autoPlay loop muted />
+<TrailerPreview/>
+<MovieList/>
 </Container>
     );
 }
