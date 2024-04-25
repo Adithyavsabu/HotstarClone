@@ -3,7 +3,6 @@ import {styled} from "styled-components"
 export const PreviewContent=styled.div`
 position :absolute;
 align-items :flex-end;
-bottom :0px;
 box-sizing: border-box;
 display :flex;
 height :664px;
@@ -114,6 +113,8 @@ export const Moviecontainer = styled.div`
     position: absolute;
     z-index: 1;
     top: 10vh;   
+    background-image: linear-gradient(360deg, #000000 70%, rgba(136,136,136,0.01) 100%);
+;
     @media (max-width: 768px) {
         top: 100vh;
     }
@@ -129,6 +130,7 @@ export const Moviecontainer = styled.div`
 
 export const Recommend = styled.div`
 margin-left: 100px;
+
 
 
 `;
