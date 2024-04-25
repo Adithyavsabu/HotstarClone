@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Moviecontainer , Content,PreviewBackground, Recommend} from "./MovieList.style";
+import { Moviecontainer , Content,PreviewBackground, Recommend, PreviewContent} from "./MovieList.style";
 import { TrailerPreview } from "./TrailerPreview";
 import {SubscribeText,MovieDetails,Watchlist,Subscribe } from "./MovieList.style";
 
@@ -10,7 +10,8 @@ export const MovieList = () =>{
         
 
     return(
-      <Moviecontainer>
+      <div>
+      <PreviewContent>
    
        <MovieDetails>
   <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/3196/1711957213196-t" alt ="shaddai"/>
@@ -24,8 +25,8 @@ export const MovieList = () =>{
 
       </MovieDetails>
      
-
-     
+</PreviewContent>
+     <Moviecontainer>
         <Recommend>
          <h4>Latest Releases</h4>
         <Content>
@@ -92,5 +93,6 @@ export const MovieList = () =>{
         </Recommend>
        
      </Moviecontainer>
+     </div>
     );
 }

@@ -2,17 +2,19 @@ import {styled} from "styled-components"
 
 export const PreviewContent=styled.div`
 position :absolute;
-align-items :flex-end;
+align-items :flex-start;
 box-sizing: border-box;
 display :flex;
-height :664px;
+flex-direction: column;
+height :430px;
 justify-content :space-between;
-padding-bottom :182px;
+padding-bottom :172px;
 padding-left :128px;
 padding-right :64px;
 padding-top: 16px;
 width :1295px; 
 z-index: 1;
+
 `;
 
 export const MovieDetails=styled.div`
@@ -21,7 +23,6 @@ display: block;
 height :259.984px;
 width :380px;
 margin-bottom: 30px;
-margin-left: 100px;
 
 img{
 box-sizing: border-box;
@@ -35,7 +36,7 @@ width :190px;
 }
 p{
   display: -webkit-box;
-  height: 60px;
+  height: 100px;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 380px;
@@ -73,8 +74,9 @@ display :block;
 font-weight: 600;
 font-size: 16px;
 line-height: 28px;
-height :424px;
-width :416px;
+height :52px;
+width :348px;
+padding: 12px 16px;
 }
 
 `;
@@ -107,7 +109,7 @@ export const PreviewSlider=styled.div`
 export const Moviecontainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+margin-top :300px;
     width: 100%;
     padding: 0 0 26px;
     position: absolute;
@@ -130,6 +132,7 @@ export const Moviecontainer = styled.div`
 
 export const Recommend = styled.div`
 margin-left: 100px;
+margin-top:40px;
 
 
 
