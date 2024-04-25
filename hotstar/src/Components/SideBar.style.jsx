@@ -117,11 +117,7 @@ margin-left: 30px;
 margin-right: 30px;
 margin-inline-end: 30px;
 margin-inline-start: 30px;
-transform :matrix(1, 0, 0, 1, 0, 0);
-transform-origin: 0px 30px;
-transition-duration: 0.2s;
-transition-property: transform;
-transition-timing-function :cubic-bezier(0.4, 0, 0.2, 1);
+
 
     img{
         height: 25px;    
@@ -140,7 +136,9 @@ transition-timing-function :cubic-bezier(0.4, 0, 0.2, 1);
         margin-left: 8px;
         padding-top: 12px;
         padding-bottom: 12px;
-       
+        animation-delay :0s;
+animation-direction: normal;
+animation-duration :0.3s;
      
        
       }
@@ -162,6 +160,15 @@ transition-timing-function :cubic-bezier(0.4, 0, 0.2, 1);
         height: 52px;
         text-align: center;
         width: 84.8594px;
+
+        a{
+          transform :matrix(1, 0, 0, 1, 0, 0);
+transform-origin: 0px 30px;
+transition-duration: 0.2s;
+transition-property: transform;
+transition-timing-function :cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
     
         }
 

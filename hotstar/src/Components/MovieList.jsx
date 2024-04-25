@@ -3,14 +3,29 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Moviecontainer , Content,PreviewBackground, Recommend} from "./MovieList.style";
 import { TrailerPreview } from "./TrailerPreview";
-
+import {SubscribeText,MovieDetails,Watchlist,Subscribe } from "./MovieList.style";
 
 
 export const MovieList = () =>{
         
 
     return(
-     <Moviecontainer>
+      <Moviecontainer>
+   
+       <MovieDetails>
+  <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/3196/1711957213196-t" alt ="shaddai"/>
+     <span></span>
+     <p>Three teenagers reaches Bangalore for their engineering degree and gets involved in a fight with seniors. 
+      </p>
+<Subscribe>
+<SubscribeText><span>Subscribe To Watch</span></SubscribeText>
+<Watchlist><span>+</span></Watchlist>
+</Subscribe>
+
+      </MovieDetails>
+     
+
+     
         <Recommend>
          <h4>Latest Releases</h4>
         <Content>
