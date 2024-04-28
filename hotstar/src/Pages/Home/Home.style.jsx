@@ -1,6 +1,4 @@
-import {styled} from "styled-components"
-
-
+import { styled } from "styled-components";
 
 export const Container = styled.main`
   position: relative;
@@ -8,4 +6,3 @@ export const Container = styled.main`
   display: block;
   top: 72px;
 `;
-
