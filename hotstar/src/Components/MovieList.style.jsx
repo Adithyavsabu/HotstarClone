@@ -1,49 +1,75 @@
-import {styled} from "styled-components"
+import {styled} from "styled-components";
+
+
+export const ScrollDiv = styled.div`
+ 
+ position: absolute;
+ display: flex;
+ flex-direction: column;
+width: 100% ;
+z-index: 1;
+margin: 0;
+padding: 0;
+
+
+
+`;
 
 export const PreviewContent=styled.div`
-position :absolute;
-align-items :flex-start;
+
 box-sizing: border-box;
 display :flex;
-flex-direction: column;
-height :430px;
-justify-content :space-between;
-padding-bottom :172px;
-padding-left :128px;
-padding-right :64px;
-padding-top: 16px;
-width :1295px; 
+flex-direction: row;
+height :500px;
+align-items:flex-end;
+justify-content: space-between;
+width :1400px; 
 z-index: 1;
-
+padding-left: 100px;
 `;
 
 export const MovieDetails=styled.div`
 box-sizing :border-box;
-display: block;
-height :259.984px;
-width :380px;
-margin-bottom: 30px;
+display: flex;
+flex-direction: column;
+height :500px;
+width :450px;
+align-items: flex-start;
+justify-content: flex-end;
 
 img{
 box-sizing: border-box;
 display :block;
-height :96px;
+height :400px;
 max-height: 120px;
 max-width :100%;
 overflow-x :clip;
 overflow-y :clip;
-width :190px;
+width :250px;
 }
+
 p{
   display: -webkit-box;
-  height: 100px;
+  height: 72px;
   overflow-x: hidden;
   overflow-y: hidden;
-  width: 380px;
-  line-height: 24px;
+  width: 416x;
+  padding-top: 16px;
+
 }
-  
+
 `;
+
+  
+export const AboutMovie =styled.div`
+
+box-sizing :border-box;
+display :block;
+height: 28px;
+padding-top :24px;
+width: 416px ;
+`;
+
 export const Subscribe=styled.div`
 box-sizing: border-box;
 display :flex;
@@ -68,6 +94,7 @@ width :338px;
 cursor: pointer;
 transition-duration :0.3s;
 transition-timing-function :cubic-bezier(0.4, 0, 0.2, 1);
+
 span{
   box-sizing :border-box;
 display :block;
@@ -101,40 +128,88 @@ width: 52px;
 
 `;
 
-export const PreviewSlider=styled.div`
-  
+
+
+export const RightDiv = styled.div`
+height: 500px;
+width: 450px;
+display: flex;
+flex-direction: column;
+column-gap: 32px;
+justify-content: flex-end;
+align-items: flex-end;
+
+
+`;
+
+export const MuteButton = styled.div`
+
 `;
 
 
+
+
+
 export const Moviecontainer = styled.div`
+padding-left: 100px;
     display: flex;
     flex-direction: column;
-margin-top :300px;
     width: 100%;
-    padding: 0 0 26px;
-    position: absolute;
     z-index: 1;
     top: 10vh;   
     background-image: linear-gradient(360deg, #000000 70%, rgba(136,136,136,0.01) 100%);
+
 ;
     @media (max-width: 768px) {
         top: 100vh;
     }
     box-shadow: 0 10px 10px #000;
    
-
+ 
 @media (max-width: 768px) {
     top: 100vh;
 } 
        
 `;
-
-
 export const Recommend = styled.div`
-margin-left: 100px;
-margin-top:40px;
 
 
+
+
+`;
+
+
+export const Wrap = styled.div`
+ padding-top: 246px; 
+  border-radius: 3px;
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  border: 1px solid rgba(249, 249, 249, 0.1);
+  width: 185px;
+
+  img {
+    inset: 0px;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 500ms ease-in-out 0s;
+    width: 185px;
+    z-index: 1;
+    top: 0;
+  }
+
+  &:hover {
+    box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
+      rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+    transform: scale(1.05);
+    border-color: rgba(249, 249, 249, 0.8);
+  }
 
 `;
 
@@ -142,23 +217,11 @@ export const Content = styled.div`
   display: grid;
   grid-gap: 25px;
   gap: 0px;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 `;
 
-export const PreviewBackground = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  z-index: -2;
-  background: rgb(2,0,36);
-background: linear-gradient(360deg, rgba(2,0,36,1) 16%, rgba(136,136,136,0.01) 100%);
-
- background-attachment:fixed ;
-  background-size: 100% 200%;
-`;
 

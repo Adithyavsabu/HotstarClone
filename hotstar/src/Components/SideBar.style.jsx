@@ -18,15 +18,11 @@ width: 96px;
   max-width: 258px; 
   line-height: 24px;
   box-sizing: border-box;
+
   
 `;
 
 
-//  &:hover { 
-//   height :654px; 
-//   width :316.5px; 
-// background-image :linear-gradient(90.43deg, rgba(15, 16, 10,0.95) 16.24%, rgba(15, 16, 10,0)98.46%); 
-// }
 
 export const Logo = styled.a`
 
@@ -41,6 +37,7 @@ flex-direction: column;
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  z-index: 2;
 
 
   img {
@@ -68,18 +65,45 @@ flex-direction: column;
     border-bottom-color: rgb(229, 231, 235);
 border-bottom-left-radius :18px;
 border-bottom-right-radius :18px;
+border-top-right-radius: 18px;
+border-top-left-radius: 18px;
 
     span{
-      align-items: center;
-      background-image :linear-gradient(270deg, rgb(255, 204, 117) 44.93%, rgb(255, 228, 144));
-      font-size :12px;
+
+background-image :linear-gradient(270deg, rgb(255, 204, 117) 44.93%, rgb(255, 228, 144));
+color:rgb(255, 204, 117) ;
+font-size :12px;
 font-weight: 500;
 height :16px;
 line-height: 16px;
 display: block;
 background-clip: text;
 background-color: rgba(0, 0, 0, 0);
+text-align: justify;
     }
+
+    img{
+
+color:rgb(255, 204, 117) ;
+height :10px;
+
+
+    }
+  }
+`;
+
+export const Nav =styled.aside`
+    display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content: center;
+  width: 500px;
+  height: 800px;
+  box-sizing: border-box;
+  z-index: 1;
+  
+  &:hover{
+background-image :linear-gradient(90.43deg, rgba(15, 16, 10,0.95) 50.24%, rgba(15, 16, 10,0)98.46%); 
   }
 `;
 
@@ -91,8 +115,9 @@ export const NavMenu = styled.div`
   width: 96px;
   height: 500px;
   box-sizing: border-box;
-  line-height: 24px;
-  tab-size: 4;
+  
+
+
 
  
 
@@ -146,11 +171,12 @@ animation-duration :0.3s;
     }
 
     &:hover{
+ 
         span{
        
         display:block;
         color: #f9f9f9;
-        margin-left: 8px;
+        margin-left: 12px;
         padding-top: 12px;
         padding-bottom: 12px;
         box-sizing: border-box;
@@ -159,7 +185,7 @@ animation-duration :0.3s;
         font-weight: 600;
         height: 52px;
         text-align: center;
-        width: 84.8594px;
+        width: 120.8594px;
 
         a{
           transform :matrix(1, 0, 0, 1, 0, 0);

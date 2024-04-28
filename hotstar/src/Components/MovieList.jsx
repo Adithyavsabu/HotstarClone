@@ -1,23 +1,30 @@
 import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "../css/swiper.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Moviecontainer , Content,PreviewBackground, Recommend, PreviewContent} from "./MovieList.style";
-import { TrailerPreview } from "./TrailerPreview";
-import {SubscribeText,MovieDetails,Watchlist,Subscribe } from "./MovieList.style";
+import { Moviecontainer , Content, Recommend, PreviewContent} from "./MovieList.style";
+import {SubscribeText,MovieDetails,Watchlist,Subscribe , ScrollDiv,RightDiv,MuteButton,AboutMovie,Wrap} from "./MovieList.style";
 
 
-export const MovieList = () =>{
+ const MovieList = () =>{
         
 
     return(
-      <div>
+      <ScrollDiv>
       <PreviewContent>
    
        <MovieDetails>
   <img src="https://img10.hotstar.com/image/upload/f_auto,h_148/sources/r1/cms/prod/3196/1711957213196-t" alt ="shaddai"/>
-     <span></span>
-     <p>Three teenagers reaches Bangalore for their engineering degree and gets involved in a fight with seniors. 
-      </p>
+  <AboutMovie>
+      <span>2h 30m</span>  <span> 1 Season</span><span> 7 language </span>
+     </AboutMovie>
+     <p>Three teenagers reaches Bangalore for their engineering degree and gets involved in a fight with seniors. </p>
+
+     <AboutMovie>
+      <span>Drama</span>  <span>Controversial</span>
+     </AboutMovie>
+
 <Subscribe>
 <SubscribeText><span>Subscribe To Watch</span></SubscribeText>
 <Watchlist><span>+</span></Watchlist>
@@ -25,74 +32,123 @@ export const MovieList = () =>{
 
       </MovieDetails>
      
+      <RightDiv>
+        <MuteButton>
+          MUTE
+        </MuteButton>
+      
+      </RightDiv>
+     
 </PreviewContent>
      <Moviecontainer>
         <Recommend>
          <h4>Latest Releases</h4>
         <Content>
+          <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link>  
+              </Link>
+              </Wrap>  
+              <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
+              </Link>
+              </Wrap>  
+              <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
+              </Link>
+              </Wrap>  
+              <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
+              </Link>
+              </Wrap>  
+              <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> <Link>
+              </Link>
+              </Wrap>  
+              <Wrap>
+              <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
+              </Link>
+              </Wrap> 
+              <Wrap>
+              <Link>
+                <img src="/images/Movie.jpeg" alt="moviecard"/>
+              </Link>
+              </Wrap> 
+            
+        </Content>
+        </Recommend>
+
+       
+        <Recommend>
+         <h4>Latest Releases</h4>
+        <Content>
+          <Wrap>
+              <Link>
+                <img src="/images/Movie.jpeg" alt="moviecard"/>
+              </Link>
+              </Wrap>  
+              <Wrap>
+              <Link>
+                <img src="/images/Movie.jpeg" alt="moviecard"/>
+              </Link>
+              </Wrap>  
+              <Wrap>
+              <Link>
+                <img src="/images/Movie.jpeg" alt="moviecard"/>
+              </Link>
+              </Wrap>  
+              <Wrap>
+              <Link>
+                <img src="/images/Movie.jpeg" alt="moviecard"/>
+              </Link>
+              </Wrap>  
+              <Wrap>
+              <Link>
+                <img src="/images/Movie.jpeg" alt="moviecard"/>
+              </Link>
+              </Wrap>  
         </Content>
         </Recommend>
 
         <Recommend>
-         <h1>Movie List</h1>
+         <h4>Latest Releases</h4>
         <Content>
+          <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link>  
+              </Link>
+              </Wrap>  
+              <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
+              </Link>
+              </Wrap>  
+              <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
+              </Link>
+              </Wrap>  
+              <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
+              </Link>
+              </Wrap>  
+              <Wrap>
               <Link>
                 <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
-        </Content>
-        </Recommend>
-
-        <Recommend>
-         <h1>Movie List</h1>
-        <Content>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link>  
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard"/>
-              </Link> 
+              </Link>
+              </Wrap>  
         </Content>
         </Recommend>
        
      </Moviecontainer>
-     </div>
+     </ScrollDiv>
     );
 }
+
+export default MovieList;

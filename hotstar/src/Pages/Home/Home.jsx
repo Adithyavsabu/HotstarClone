@@ -1,7 +1,7 @@
 
 import { Container } from "./Home.style";
 import { TrailerPreview } from "../../Components/TrailerPreview";
-import { MovieList } from "../../Components/MovieList";
+import  MovieList from "../../Components/MovieList";
 
 
 const Home = ()=>{
