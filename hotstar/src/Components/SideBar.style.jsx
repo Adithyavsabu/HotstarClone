@@ -4,7 +4,7 @@ export const NavBar = styled.nav`
   top: 0;
   bottom: 0;
   left: 0;
-  height: 747.2px;
+  height:100vh;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -12,9 +12,17 @@ export const NavBar = styled.nav`
   width: 96px;
   min-width: 96px;
   z-index: 20;
-  max-width: 258px;
+  max-width: 500px;
   line-height: 24px;
   box-sizing: border-box;
+
+  &:hover {
+    background-image: linear-gradient(
+      90.43deg,
+      rgba(15, 16, 10, 0.95) 50.24%,
+      rgba(15, 16, 10, 0) 98.46%
+    );
+  }
 `;
 
 export const Logo = styled.a`
@@ -86,18 +94,12 @@ export const Nav = styled.aside`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  height: 800px;
+  max-width: 258px;
+  height: calc(100vh-20vh);
   box-sizing: border-box;
   z-index: 1;
 
-  &:hover {
-    background-image: linear-gradient(
-      90.43deg,
-      rgba(15, 16, 10, 0.95) 50.24%,
-      rgba(15, 16, 10, 0) 98.46%
-    );
-  }
+ 
 `;
 
 export const NavMenu = styled.div`
@@ -148,9 +150,7 @@ export const NavMenu = styled.div`
       margin-left: 8px;
       padding-top: 12px;
       padding-bottom: 12px;
-      animation-delay: 0s;
-      animation-direction: normal;
-      animation-duration: 0.3s;
+   
     }
   }
 
@@ -167,7 +167,10 @@ export const NavMenu = styled.div`
       font-weight: 600;
       height: 52px;
       text-align: center;
-      width: 120.8594px;
+      width: 150.8594px;
+      animation-delay: 0s;
+      animation-direction: normal;
+      animation-duration: 0.3s;
 
       a {
         transform: matrix(1, 0, 0, 1, 0, 0);
