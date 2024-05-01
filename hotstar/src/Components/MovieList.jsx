@@ -1,18 +1,8 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay , faPlus} from '@fortawesome/free-solid-svg-icons';
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import {
-  Moviecontainer,
-  Content,
-  Recommend,
-  PreviewContent,
-} from "./MovieList.style";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { TrailerPreview } from "../Components/TrailerPreview";
+import { Moviecontainer, Recommend, PreviewContent } from "./MovieList.style";
 import {
   SubscribeText,
   MovieDetails,
@@ -22,49 +12,16 @@ import {
   RightDiv,
   MuteButton,
   AboutMovie,
-  Wrap,
 } from "./MovieList.style";
+import MovieCarousel from "./MovieCarousel";
 
 const MovieList = (props) => {
   const { data } = props;
   const dataArray = Array.isArray(data) ? data : Object.values(data);
 
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 6,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
   return (
     <ScrollDiv>
+      <TrailerPreview />
       <PreviewContent>
         <MovieDetails>
           <img
@@ -86,96 +43,34 @@ const MovieList = (props) => {
 
           <Subscribe>
             <SubscribeText>
-              <span> <FontAwesomeIcon icon={faPlay} style={{color: "#ffffff",}}/>&nbsp;&nbsp;Subscribe To Watch</span>
+              <span>
+                {" "}
+                <FontAwesomeIcon icon={faPlay} style={{ color: "#ffffff" }} />
+                &nbsp;&nbsp;Subscribe To Watch
+              </span>
             </SubscribeText>
             <Watchlist>
-              <span><FontAwesomeIcon icon={faPlus} style={{color: "#ffffff",}} /></span>
+              <span>
+                <FontAwesomeIcon icon={faPlus} style={{ color: "#ffffff" }} />
+              </span>
             </Watchlist>
           </Subscribe>
         </MovieDetails>
 
         <RightDiv>
-          <MuteButton><img src="/images/mute-icon.svg" alt="mute" /></MuteButton>
+          <MuteButton>
+            <img src="/images/mute-icon.svg" alt="mute" />
+          </MuteButton>
         </RightDiv>
       </PreviewContent>
       <Moviecontainer>
-      <Recommend>
-          <h4>Latest Releases</h4>
-          
-          <Slider {...settings}>
-            {dataArray.map((data)=>
-          
-            <Wrap>
-              <Link >
-                <img src={data.posterURL} alt="moviecard" />
-              </Link>
-            </Wrap>
-           
-            )}
-            </Slider>
-            </Recommend>
-  
-
         <Recommend>
           <h4>Latest Releases</h4>
-          <Content>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-          </Content>
+          <MovieCarousel movies={dataArray} />
         </Recommend>
-
         <Recommend>
-          <h4>Latest Releases</h4>
-          <Content>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-            <Wrap>
-              <Link>
-                <img src="/images/Movie.jpeg" alt="moviecard" />
-              </Link>
-            </Wrap>
-          </Content>
+          <h4>Horror</h4>
+          <MovieCarousel movies={dataArray} />
         </Recommend>
       </Moviecontainer>
     </ScrollDiv>

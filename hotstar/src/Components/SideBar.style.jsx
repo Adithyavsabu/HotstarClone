@@ -4,7 +4,7 @@ export const NavBar = styled.nav`
   top: 0;
   bottom: 0;
   left: 0;
-  height:100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -15,14 +15,6 @@ export const NavBar = styled.nav`
   max-width: 500px;
   line-height: 24px;
   box-sizing: border-box;
-
-  &:hover {
-    background-image: linear-gradient(
-      90.43deg,
-      rgba(15, 16, 10, 0.95) 50.24%,
-      rgba(15, 16, 10, 0) 98.46%
-    );
-  }
 `;
 
 export const Logo = styled.a`
@@ -94,12 +86,20 @@ export const Nav = styled.aside`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 258px;
-  height: calc(100vh-20vh);
+  max-width: 708px;
+  height: 100vh;
   box-sizing: border-box;
   z-index: 1;
 
- 
+  &:hover {
+    width: 506px;
+    background-image: linear-gradient(
+      90.43deg,
+      rgba(15, 16, 10, 0.95) 70.24%,
+      /* Adjust the hover gradient to spread halfway across the screen */
+        rgba(15, 16, 10, 0) 98.46% /* Adjust the hover gradient endpoint */
+    );
+  }
 `;
 
 export const NavMenu = styled.div`
@@ -110,74 +110,67 @@ export const NavMenu = styled.div`
   width: 96px;
   height: 500px;
   box-sizing: border-box;
+  span {
+    width: 96px;
 
-  a {
-    display: flex;
-    width: auto;
-    height: 60px;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-    font-weight: 500;
-    font-size: 14px;
-    outline-offset: 2px;
-    outline-width: 1.6px;
-    outline-style: solid;
-    box-sizing: border-box;
-    outline-color: rgba(0, 0, 0, 0);
-    border-image-repeat: stretch;
-    border-image-width: 1;
-    align-items: center;
-    text-align: center;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-inline-end: 30px;
-    margin-inline-start: 30px;
+    a {
+      display: flex;
 
-    img {
-      height: 25px;
-    }
-
-    span {
-      display: none;
-      width: auto;
-      height: auto;
-      font-size: 18px;
+      height: 60px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.6);
       font-weight: 500;
-      line-height: 28px;
-      text-align: center;
-      margin-left: 8px;
-      color: color rgba(255, 255, 255, 0.6);
-      margin-left: 8px;
-      padding-top: 12px;
-      padding-bottom: 12px;
-   
-    }
-  }
-
-  &:hover {
-    span {
-      display: block;
-      color: #f9f9f9;
-      margin-left: 12px;
-      padding-top: 12px;
-      padding-bottom: 12px;
+      font-size: 14px;
+      outline-offset: 2px;
+      outline-width: 1.6px;
+      outline-style: solid;
       box-sizing: border-box;
-      font-size: 18px;
+      outline-color: rgba(0, 0, 0, 0);
 
-      font-weight: 600;
-      height: 52px;
+      align-items: center;
       text-align: center;
-      width: 150.8594px;
-      animation-delay: 0s;
-      animation-direction: normal;
-      animation-duration: 0.3s;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-inline-end: 30px;
+      margin-inline-start: 30px;
 
-      a {
-        transform: matrix(1, 0, 0, 1, 0, 0);
-        transform-origin: 0px 30px;
-        transition-duration: 0.2s;
-        transition-property: transform;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      img {
+        height: 25px;
+      }
+
+      span {
+        display: none;
+
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 28px;
+        text-align: center;
+        margin-left: 8px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-left: 8px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+    }
+
+    &:hover {
+      span {
+        display: block;
+        color: rgba(255, 255, 255, 0.6);
+        margin-left: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        box-sizing: border-box;
+        font-size: 18px;
+
+        font-weight: 600;
+        height: 52px;
+        text-align: center;
+        width: 200.8594px;
+
+        a {
+          color: rgb(255, 255, 255);
+        }
       }
     }
   }
