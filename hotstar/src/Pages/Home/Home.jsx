@@ -1,4 +1,4 @@
-import { react } from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 import { Container } from "./Home.style";
 
@@ -6,9 +6,11 @@ import MovieList from "../../Components/MovieList";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const[horror,setHorror]=useState([]);
 
   useEffect(() => {
     getData();
+    getHorror();
   }, []);
 
   const getData = () => {
@@ -22,9 +24,23 @@ const Home = () => {
       });
   };
 
+  const getHorror = () => {
+    fetch("https://api.sampleapis.com/movies/horror", {
+      method: "GET",
+    })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      setHorror(result);
+    
+    })
+    .catch(error=>console.error("error",error));
+};
+
+
   return (
     <Container>
-      <MovieList data={data} />
+      <MovieList data={data} horror={horror} />
     </Container>
   );
 };

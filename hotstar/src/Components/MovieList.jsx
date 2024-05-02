@@ -17,9 +17,9 @@ import {
 } from "./MovieList.style";
 import MovieCarousel from "./MovieCarousel";
 
-const MovieList = (props) => {
-  const { data } = props;
+const MovieList = ({data,horror}) => {
   const dataArray = Array.isArray(data) ? data : Object.values(data);
+  const horrorArray = Array.isArray(horror) ? horror : Object.values(horror);
 
   return (
     <ScrollDiv>
@@ -74,7 +74,7 @@ const MovieList = (props) => {
         </Recommend>
         <Recommend>
           <h4>Horror</h4>
-          <MovieCarousel movies={dataArray} />
+          <MovieCarousel movies={horrorArray} />
         </Recommend>
       </Moviecontainer>
     </ScrollDiv>
