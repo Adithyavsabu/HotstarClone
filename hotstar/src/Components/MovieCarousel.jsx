@@ -4,13 +4,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight,
+  faPlay,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { Dot } from "./utilities.style";
 import {
   Content,
   Wrap,
   ContentContainer,
   NextArrow,
   PrevArrow,
+  MovieOverlay,
+  WatchNowButton,
+  Watchlist,
+  Subscribe,
+  Overlay,
+  Description,
+  AboutMovie,
 } from "./MovieCarousel.style";
 
 const MovieCarousel = ({ movies }) => {
@@ -51,6 +61,41 @@ const MovieCarousel = ({ movies }) => {
                   />
                 </NextArrow>
               )}
+              <MovieOverlay>
+                <Overlay>
+                  <img src={movie.posterURL} alt="overlayimage" />
+                  <Subscribe>
+                    <WatchNowButton>
+                      <span>
+                        {" "}
+                        <FontAwesomeIcon
+                          icon={faPlay}
+                          style={{ color: "black" }}
+                        />
+                        &nbsp;&nbsp;Watch Now
+                      </span>
+                    </WatchNowButton>
+                    <Watchlist>
+                      <span>
+                        <FontAwesomeIcon
+                          icon={faPlus}
+                          style={{ color: "#ffffff" }}
+                        />
+                      </span>
+                    </Watchlist>
+                  </Subscribe>
+                  <AboutMovie>
+                    <span>2h 30m</span> <Dot />
+                    <span> 1 Season</span>
+                  </AboutMovie>
+                  <Description>
+                    <p>
+                      Three teenagers reaches Bangalore for their engineering
+                      degree and gets involved in a fight with seniors. .
+                    </p>
+                  </Description>
+                </Overlay>
+              </MovieOverlay>
             </Wrap>
           ))}
         </Content>

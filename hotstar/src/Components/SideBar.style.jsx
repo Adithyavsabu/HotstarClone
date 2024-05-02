@@ -96,8 +96,8 @@ export const Nav = styled.aside`
     background-image: linear-gradient(
       90.43deg,
       rgba(15, 16, 10, 0.95) 70.24%,
-      /* Adjust the hover gradient to spread halfway across the screen */
-        rgba(15, 16, 10, 0) 98.46% /* Adjust the hover gradient endpoint */
+
+      rgba(15, 16, 10, 0) 98.46%
     );
   }
 `;

@@ -3,15 +3,6 @@ import { react } from "react";
 import { useState } from "react";
 
 export const SideBar = () => {
-  const [isHovered, setIsHovered] = useState({
-    myPage: false,
-    explore: false,
-    home: false,
-    tv: false,
-    movies: false,
-    sports: false,
-    categories: false,
-  });
   return (
     <NavBar>
       <Logo>
@@ -24,12 +15,7 @@ export const SideBar = () => {
       <Nav>
         <NavMenu>
           <span>
-            <a
-              href="/mypage"
-              onMouseEnter={() => setIsHovered({ ...isHovered, myPage: true })}
-              onMouseLeave={() => setIsHovered({ ...isHovered, myPage: false })}
-              style={{ color: isHovered.myPage ? "#fff" : "#000" }}
-            >
+            <a href="/mypage">
               <img src="/images/user-icon.svg" alt="HOME" />
               <span>MySpace</span>
             </a>

@@ -38,14 +38,27 @@ export const MovieDetails = styled.div`
     overflow-y: clip;
     width: 250px;
   }
-
+`;
+export const Description = styled.div`
+  width: 416x;
+  padding-top: 16px;
+  display: flex;
+  height: 72px;
+  box-sizing: border-box;
   p {
     display: -webkit-box;
     height: 72px;
     overflow-x: hidden;
     overflow-y: hidden;
     width: 416x;
-    padding-top: 16px;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.84);
+    overflow-wrap: break-word;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 `;
 
@@ -55,6 +68,9 @@ export const AboutMovie = styled.div`
   height: 28px;
   padding-top: 24px;
   width: 416px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 600;
 `;
 
 export const Subscribe = styled.div`

@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPlus, faCircleDot } from "@fortawesome/free-solid-svg-icons";
+import { Dot, Pipe } from "./utilities.style";
 import { TrailerPreview } from "../Components/TrailerPreview";
 import { Moviecontainer, Recommend, PreviewContent } from "./MovieList.style";
 import {
@@ -12,6 +13,7 @@ import {
   RightDiv,
   MuteButton,
   AboutMovie,
+  Description,
 } from "./MovieList.style";
 import MovieCarousel from "./MovieCarousel";
 
@@ -29,16 +31,18 @@ const MovieList = (props) => {
             alt="shaddai"
           />
           <AboutMovie>
-            <span>2h 30m</span> <span> 1 Season</span>
-            <span> 7 language </span>
+            <span>2h 30m</span> <Dot />
+            <span> 1 Season</span>
           </AboutMovie>
-          <p>
-            Three teenagers reaches Bangalore for their engineering degree and
-            gets involved in a fight with seniors.{" "}
-          </p>
-
+          <Description>
+            <p>
+              Three teenagers reaches Bangalore for their engineering degree and
+              gets involved in a fight with seniors. They find a local gangster
+              named Ranga to help them take revenge.{" "}
+            </p>
+          </Description>
           <AboutMovie>
-            <span>Drama</span> <span>Controversial</span>
+            <span>Drama</span> &nbsp; <Pipe /> &nbsp; <span>Controversial</span>
           </AboutMovie>
 
           <Subscribe>
