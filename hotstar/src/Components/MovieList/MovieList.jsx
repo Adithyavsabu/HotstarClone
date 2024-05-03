@@ -1,8 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPlus, faCircleDot } from "@fortawesome/free-solid-svg-icons";
-import { Dot, Pipe } from "./utilities.style";
-import { TrailerPreview } from "../Components/TrailerPreview";
+
+import { Dot, Pipe } from "../Utils.style/utilities.style";
+import { TrailerPreview } from "../TrailerPreview/TrailerPreview";
 import { Moviecontainer, Recommend, PreviewContent } from "./MovieList.style";
 import {
   SubscribeText,
@@ -15,9 +16,9 @@ import {
   AboutMovie,
   Description,
 } from "./MovieList.style";
-import MovieCarousel from "./MovieCarousel";
+import MovieCarousel from "../MovieCarousel/MovieCarousel";
 
-const MovieList = ({data,horror}) => {
+const MovieList = ({ data, horror }) => {
   const dataArray = Array.isArray(data) ? data : Object.values(data);
   const horrorArray = Array.isArray(horror) ? horror : Object.values(horror);
 

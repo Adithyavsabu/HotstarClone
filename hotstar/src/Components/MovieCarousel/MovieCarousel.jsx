@@ -7,7 +7,9 @@ import {
   faPlay,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
-import { Dot } from "./utilities.style";
+import { Link } from "react-router-dom";
+
+import { Dot } from "../Utils.style/utilities.style";
 import {
   Content,
   Wrap,
@@ -22,6 +24,7 @@ import {
   Description,
   AboutMovie,
 } from "./MovieCarousel.style";
+
 
 const MovieCarousel = ({ movies }) => {
   const [startIndex, setStartIndex] = useState(0);
@@ -42,6 +45,7 @@ const MovieCarousel = ({ movies }) => {
         <Content>
           {movies.slice(startIndex, startIndex + 8).map((movie, index) => (
             <Wrap key={index}>
+              <Link to ></Link>
               <img src={movie.posterURL} alt="" />
               {index === 0 && (
                 <PrevArrow className="prev-arrow" onClick={handlePrevClick}>

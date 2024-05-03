@@ -1,4 +1,4 @@
-import videoBg from "../assets/videos/videoBg.mp4";
+import videoBg from "../../assets/videos/videoBg.mp4";
 import {
   Video,
   Preview,

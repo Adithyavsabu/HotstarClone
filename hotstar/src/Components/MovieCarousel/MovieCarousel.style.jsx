@@ -45,6 +45,10 @@ export const MovieOverlay = styled.div`
   opacity: 0;
 
   z-index: 2;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 `;
 
 export const Overlay = styled.div`
@@ -76,9 +80,9 @@ export const WatchNowButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 30px;
   //min-width :min-content;
-  width: 130px;
+  width: 120px;
   background-color: white;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -94,11 +98,12 @@ export const WatchNowButton = styled.button`
     box-sizing: border-box;
     display: block;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 10px;
     height: 40px;
     width: 148px;
     padding: 12px 16px;
     color: black;
+    align-items: center;
   }
 `;
 
@@ -108,7 +113,7 @@ export const Watchlist = styled.button`
   box-sizing: border-box;
   display: flex;
 
-  height: 40px;
+  height: 30px;
   justify-content: center;
 
   overflow-x: hidden;
@@ -117,7 +122,7 @@ export const Watchlist = styled.button`
   padding-left: 14px;
   padding-right: 14px;
   padding-top: 14px;
-  width: 40px;
+  width: 30px;
   background-color: rgba(255, 255, 255, 0.2);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -126,8 +131,8 @@ export const Watchlist = styled.button`
 `;
 
 export const Wrap = styled.div`
-  height: 236px;
-  width: 175px;
+  height: 202px;
+  width: 151px;
   border-radius: 3px;
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
@@ -135,9 +140,7 @@ export const Wrap = styled.div`
   overflow: hidden;
   position: relative;
   transition: transform 0.3s ease-in-out;
-
   border: 1px solid rgba(249, 249, 249, 0.1);
-
   margin-right: 5px;
 
   img {
@@ -154,7 +157,7 @@ export const Wrap = styled.div`
   }
 
   &:hover {
-    transform: scale(1.4);
+    transform: scale(1.6);
     z-index: 2;
     ${MovieOverlay} {
       opacity: 1;
@@ -164,7 +167,7 @@ export const Wrap = styled.div`
         display: block;
         height: 40%;
         width: 100%;
-        object-fit: fill;
+        object-fit: cover;
         position: relative;
       }
     }
@@ -195,16 +198,16 @@ export const AboutMovie = styled.div`
   box-sizing: border-box;
   display: block;
   height: 18px;
-  padding-top: 14px;
+  padding-top: 12px;
   width: 216px;
   color: rgb(255, 255, 255);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
 `;
 
 export const Description = styled.div`
   width: 216x;
-  padding-top: 10px;
+  padding-top: 8px;
   display: flex;
   height: 52px;
   box-sizing: border-box;
@@ -215,7 +218,7 @@ export const Description = styled.div`
     overflow-y: hidden;
     width: 216x;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.84);
     overflow-wrap: break-word;
