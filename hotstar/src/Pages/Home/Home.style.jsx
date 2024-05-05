@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
 
-export const Container = styled.main`
-  position: relative;
-  min-height: 100vh;
-  display: block;
-  top: 72px;
+export const ScrollDiv = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1;
 `;

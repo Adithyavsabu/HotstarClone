@@ -1,24 +1,31 @@
-export const getData = () => {
-    fetch("https://api.sampleapis.com/movies/family", {
-      method: "GET",
+export const getMovies = (genre) => {
+  return fetch(`https://api.sampleapis.com/movies/${genre}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      return response.json();
     })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
-        return result;
-      })
-      .catch((error) => console.error("error", error));
-  };
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      throw error;
+    });
+};
 
-
- export const getHorror = () => {
-    fetch("https://api.sampleapis.com/movies/horror", {
-      method: "GET",
+export const getMovie = (id, genre) => {
+  return fetch(`https://api.sampleapis.com/movies/${genre}/${id}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      return response.json();
     })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result);
-        return result;
-      })
-      .catch((error) => console.error("error", error));
-  };
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      throw error;
+    });
+};

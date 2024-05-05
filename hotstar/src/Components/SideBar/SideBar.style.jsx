@@ -93,11 +93,10 @@ export const Nav = styled.aside`
 
   &:hover {
     width: 506px;
-    background-image: linear-gradient(
-      90.43deg,
-      rgba(15, 16, 10, 0.95) 70.24%,
-
-      rgba(15, 16, 10, 0) 98.46%
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.8) 100%
     );
   }
 `;

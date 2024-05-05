@@ -25,8 +25,7 @@ import {
   AboutMovie,
 } from "./MovieCarousel.style";
 
-
-const MovieCarousel = ({ movies }) => {
+const MovieCarousel = ({ movies, genre }) => {
   const [startIndex, setStartIndex] = useState(0);
 
   const handleNextClick = () => {
@@ -45,8 +44,8 @@ const MovieCarousel = ({ movies }) => {
         <Content>
           {movies.slice(startIndex, startIndex + 8).map((movie, index) => (
             <Wrap key={index}>
-              <Link to ></Link>
               <img src={movie.posterURL} alt="" />
+
               {index === 0 && (
                 <PrevArrow className="prev-arrow" onClick={handlePrevClick}>
                   <FontAwesomeIcon
@@ -69,16 +68,20 @@ const MovieCarousel = ({ movies }) => {
                 <Overlay>
                   <img src={movie.posterURL} alt="overlayimage" />
                   <Subscribe>
-                    <WatchNowButton>
-                      <span>
-                        {" "}
-                        <FontAwesomeIcon
-                          icon={faPlay}
-                          style={{ color: "black" }}
-                        />
-                        &nbsp;&nbsp;Watch Now
-                      </span>
-                    </WatchNowButton>
+                    <Link
+                      to={`http://localhost:3000/details/${genre}/${movie.id}`}
+                    >
+                      <WatchNowButton>
+                        <span>
+                          {" "}
+                          <FontAwesomeIcon
+                            icon={faPlay}
+                            style={{ color: "black" }}
+                          />
+                          &nbsp;&nbsp;Watch Now
+                        </span>
+                      </WatchNowButton>
+                    </Link>
                     <Watchlist>
                       <span>
                         <FontAwesomeIcon
