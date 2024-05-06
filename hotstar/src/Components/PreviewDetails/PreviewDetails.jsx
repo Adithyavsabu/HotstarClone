@@ -1,4 +1,8 @@
 import React from "react";
+import { styled } from "styled-components";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Dot, Pipe } from "../../Components/Utils.style/utilities.style";
@@ -15,6 +19,16 @@ import {
 } from "./PreviewDetails.style";
 
 export const PreviewDetails = () => {
+  let settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: 5.5,
+    slidesToScroll: 5.5,
+    autoplay: false,
+    variableWidth: false,
+    centerMode: false,
+    arrows: true,
+  };
   return (
     <PreviewContent>
       <MovieDetails>
@@ -54,11 +68,157 @@ export const PreviewDetails = () => {
       </MovieDetails>
 
       <RightDiv>
-        <></>
         <MuteButton>
           <img src="/images/mute-icon.svg" alt="mute" />
         </MuteButton>
+        <Container>
+          <Carousel {...settings}>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+            <Wrap>
+              <a>
+                <img src="/images/aavesham.jpeg" alt="" />
+              </a>
+            </Wrap>
+          </Carousel>
+        </Container>
       </RightDiv>
     </PreviewContent>
   );
 };
+
+const Container = styled.div`
+  overflow: hidden;
+  display: flex;
+`;
+
+const Carousel = styled(Slider)`
+  display: block;
+padding-top: 10px;
+  overflow: hidden;
+  z-index: 2;
+  height: 58px;
+  width: 400px;
+
+  & > button {
+    opacity: 0;
+    height: 100%;
+    width: 5vw;
+
+    &:hover {
+      opacity: 1;
+      transition: opacity 0.2s ease 0s;
+    }
+  }
+
+  ul li button {
+    &:before {
+      font-size: 8px;
+      color: rgb(150, 158, 171);
+    }
+  }
+
+  li.slick-active button:before {
+    color: white;
+  }
+
+  .slick-list {
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .slick-prev {
+    left: -75px;
+  }
+
+  .slick-next {
+    right: -75px;
+  }
+
+  .slick-next,
+  .slick-prev {
+    height: 100%;
+    width: 150px;
+    z-index: 2;
+  }
+`;
+
+const Wrap = styled.div`
+  border-radius: 4px;
+  cursor: pointer;
+
+  height: 52px;
+  width: 40px;
+  a {
+    cursor: pointer;
+    display: block;
+
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover {
+      padding: 0;
+      border: 4px;
+      transition-duration: 300ms;
+      transform: scale(1.1);
+      z-index: 7;
+
+      img {
+        z-index: 7;
+        object-fit: cover;
+        padding: 0;
+      }
+    }
+  }
+`;

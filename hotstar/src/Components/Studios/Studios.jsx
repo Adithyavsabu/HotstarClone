@@ -53,11 +53,13 @@ const Container = styled.div`
   gap: 5px;
   flex-wrap: wrap;
   z-index: 1;
+
+
 `;
 
 const Wrap = styled.div`
-  height: 122px;
-  width: 217px;
+  height: 110px;
+  width: 190px;
   z-index: 1;
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
     rgb(0 0 0 / 73%) 0px 16px 10px -10px;
@@ -67,6 +69,8 @@ const Wrap = styled.div`
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   border: 3px solid rgb(7, 5, 5);
   background-color: #414c5e;
+
+
 
   img {
     inset: 0px;

@@ -13,4 +13,9 @@ export const Moviecontainer = styled.div`
     rgba(136, 136, 136, 0.01) 100%
   );
 `;
-export const Recommend = styled.div``;
+export const Recommend = styled.div`
+h4{
+  padding-top: 40px;
+}
+
+`;

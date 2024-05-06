@@ -85,7 +85,7 @@ export const Nav = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   max-width: 708px;
   height: 100vh;
   box-sizing: border-box;
@@ -134,7 +134,7 @@ export const NavMenu = styled.div`
       margin-inline-start: 30px;
 
       img {
-        height: 25px;
+        height: 22px;
       }
 
       span {

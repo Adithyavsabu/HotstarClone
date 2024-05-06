@@ -22,20 +22,24 @@ import {
 } from "./MovieCarousel.style";
 const ImgSlider = ({ movies }) => {
   let settings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 7,
     autoplay: false,
+    variableWidth: false,
+    centerMode: false,
+    arrows: true,
   };
   return (
-    <Carousel {...settings}>
-      {movies.map((movie, index) => (
-        <Wrap key={index}>
-          <a>
-            <img src={movie.posterURL} alt="" />
-          </a>
-          {/* <MovieOverlay>
+    <Container>
+      <Carousel {...settings}>
+        {movies.map((movie, index) => (
+          <Wrap key={index}>
+            <a>
+              <img src={movie.posterURL} alt="" />
+            </a>
+            {/* <MovieOverlay>
             <Overlay>
               <img src={movie.posterURL} alt="overlayimage" />
               <Subscribe>
@@ -68,26 +72,41 @@ const ImgSlider = ({ movies }) => {
             </Overlay>
 
           </MovieOverlay> */}
-          <MovieDetails>
-            <h3>TITLE HERE</h3>
-            {/* Add more movie details here */}
-          </MovieDetails>
-        </Wrap>
-      ))}
-    </Carousel>
+            <MovieDetails>
+              <h3>TITLE HERE</h3>
+              {/* Add more movie details here */}
+            </MovieDetails>
+          </Wrap>
+        ))}
+      </Carousel>
+    </Container>
   );
 };
 
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  z-index: 5;
+ 
+`;
+
 const Carousel = styled(Slider)`
-  margin-top: 20px;
-  overflow: hidden;
+position: relative;
+  display: flex;
   padding-bottom: 100px;
+ 
+
+
+
   z-index: 2;
+width: 100%;
   & > button {
     opacity: 0;
     height: 100%;
     width: 5vw;
-    z-index: 2;
 
     &:hover {
       opacity: 1;
@@ -107,7 +126,20 @@ const Carousel = styled(Slider)`
   }
 
   .slick-list {
-    overflow: initial;
+    width: 100%;
+
+    position: relative;
+  display: block !important;
+
+overflow: visible;
+ 
+  }
+
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
   }
 
   .slick-prev {
@@ -116,6 +148,28 @@ const Carousel = styled(Slider)`
 
   .slick-next {
     right: -75px;
+  }
+
+  .slick-next,
+  .slick-prev {
+    height: 100%;
+    width: 150px;
+    z-index: 2;
+  }
+
+  .slick-prev,
+  .slick-prev:hover {
+    left: 0;
+    background-image: linear-gradient(to right, #000, rgba(255, 255, 255, 0));
+  }
+  .slick-next,
+  .slick-next:hover {
+    right: 0;
+    background-image: linear-gradient(to left, #000, rgba(255, 255, 255, 0));
+  }
+  .slick-next.slick-disabled:before,
+  .slick-prev.slick-disabled:before {
+    display: none;
   }
 `;
 
@@ -168,6 +222,7 @@ const Wrap = styled.div`
       z-index: 7;
       ${MovieDetails} {
         opacity: 1;
+       
       }
       img {
         z-index: 7;

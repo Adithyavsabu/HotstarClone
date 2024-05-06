@@ -3,14 +3,14 @@ import { styled } from "styled-components";
 export const PreviewContent = styled.div`
   display: flex;
   flex-direction: row;
-  height: 600px;
+  height: 500px;
   align-items: flex-end;
-
+justify-content: space-between;
   width: 1200px;
   z-index: 1;
   padding-left: 100px;
-  padding-top: 60px;
-  line-height: 24px;
+padding-top: 50px;
+
 `;
 
 export const MovieDetails = styled.div`
@@ -20,24 +20,26 @@ export const MovieDetails = styled.div`
   height: 500px;
   width: 450px;
   align-items: flex-start;
-  justify-content: space-evenly;
+ justify-content: flex-end;
 
   img {
     box-sizing: border-box;
     display: block;
-    height: 150px;
+    height: 120px;
     max-height: 250px;
     max-width: 100%;
     overflow-x: clip;
     overflow-y: clip;
     width: 250px;
+
   }
 `;
 export const Description = styled.div`
   width: 416x;
-  padding-top: 16px;
+ padding-top: 16px;
+ padding-bottom: 16px;
   display: flex;
-  height: 72px;
+  height: 92px;
   box-sizing: border-box;
   p {
     display: -webkit-box;
@@ -60,11 +62,13 @@ export const AboutMovie = styled.div`
   box-sizing: border-box;
   display: block;
   height: 28px;
-  padding-top: 24px;
+ padding-top: 24px;
+ line-height: 24px;
   width: 416px;
   color: rgb(255, 255, 255);
   font-size: 16px;
   font-weight: 600;
+  
 `;
 
 export const Subscribe = styled.div`
@@ -75,7 +79,9 @@ export const Subscribe = styled.div`
   height: 92px;
   justify-content: space-between;
   padding-top: 40px;
+
   width: 416px;
+  line-height: 24px;
 `;
 
 export const SubscribeText = styled.button`
@@ -142,6 +148,9 @@ export const RightDiv = styled.div`
   column-gap: 32px;
   justify-content: flex-end;
   align-items: flex-end;
+  
 `;
 
-export const MuteButton = styled.div``;
+export const MuteButton = styled.div`
+padding-bottom: 10px;
+`;
