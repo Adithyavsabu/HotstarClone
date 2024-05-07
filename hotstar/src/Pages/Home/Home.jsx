@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { TrailerPreview } from "../../Components/TrailerPreview/TrailerPreview";
 import { PreviewDetails } from "../../Components/PreviewDetails/PreviewDetails";
 import MovieList from "../../Components/MovieList/MovieList";
-import { ScrollDiv } from "./Home.style";
+import { Container, ScrollDiv } from "./Home.style";
 import { getMovies } from "../../api/getMovies";
+
 
 const Home = () => {
   const [familyMovies, setFamily] = useState([]);
@@ -39,11 +40,14 @@ const Home = () => {
   // };
 
   return (
+
     <ScrollDiv>
       <TrailerPreview />
       <PreviewDetails />
       <MovieList familyMovies={familyMovies} horrorMovies={horrorMovies} />
+   
     </ScrollDiv>
+      
   );
 };
 

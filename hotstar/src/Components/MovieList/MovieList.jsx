@@ -3,6 +3,8 @@ import { Moviecontainer, Recommend } from "./MovieList.style";
 import MovieCarousel from "../MovieCarousel/MovieCarousel";
 import ImgSlider from "../MovieCarousel/ImgSlider";
 import Studios from "../../Components/Studios/Studios";
+import Footer from "../Footer/Footer";
+
 
 const MovieList = ({ familyMovies, horrorMovies }) => {
   const familyMoviesArray = Array.isArray(familyMovies)
@@ -23,7 +25,9 @@ const MovieList = ({ familyMovies, horrorMovies }) => {
         <MovieCarousel movies={horrorArrayArray} genre="horror" />
       </Recommend>
       <Studios />
+  
       <ImgSlider movies={familyMoviesArray} />
+      <Footer/>
     </Moviecontainer>
   );
 };

@@ -5,15 +5,33 @@ const Studios = (props) => {
     <Container>
       <Wrap>
         <img src="/images/viewers-disney.png" alt="" />
-        <video src="/videos/1564674844-disney.mp4" autoPlay loop playsInline />
+        <video
+          src="/videos/1564674844-disney.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </Wrap>
       <Wrap>
         <img src="/images/viewers-pixar.png" alt="" />
-        <video src="/videos/1564676714-pixar.mp4" autoPlay loop playsInline />
+        <video
+          src="/videos/1564676714-pixar.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </Wrap>
       <Wrap>
         <img src="/images/viewers-marvel.png" alt="" />
-        <video src="/videos/1564676115-marvel.mp4" autoPlay loop playsInline />
+        <video
+          src="/videos/1564676115-marvel.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </Wrap>
       <Wrap>
         <img src="/images/viewers-starwars.png" alt="" />
@@ -21,6 +39,7 @@ const Studios = (props) => {
           src="/videos/1608229455-star-wars.mp4"
           autoPlay
           loop
+          muted
           playsInline
         />
       </Wrap>
@@ -30,6 +49,7 @@ const Studios = (props) => {
           src="/videos/1564676296-national-geographic.mp4"
           autoPlay
           loop
+          muted
           playsInline
         />
       </Wrap>
@@ -39,6 +59,7 @@ const Studios = (props) => {
           src="/videos/1564672344-hotstar-specials.mp4"
           autoPlay
           loop
+          muted
           playsInline
         />
       </Wrap>
@@ -53,8 +74,6 @@ const Container = styled.div`
   gap: 5px;
   flex-wrap: wrap;
   z-index: 1;
-
-
 `;
 
 const Wrap = styled.div`
@@ -68,9 +87,7 @@ const Wrap = styled.div`
   position: relative;
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   border: 3px solid rgb(7, 5, 5);
-  background-color: #414c5e;
-
-
+  background-color: rgb(22, 24, 31);
 
   img {
     inset: 0px;

@@ -11,8 +11,9 @@ const Detail = (props) => {
   useEffect(() => {
     // Fetch movie details based on the ID
     // Example fetch call:
-    getMovie(id, genre).then((result) => setDetailData(result));
-    fetch(`https://api.sampleapis.com/movies/${genre}/${id}`);
+    getMovie(id, genre).then((result) => setDetailData(result))
+    .catch((error)=>{alert("Error fetching data",error)});
+    //fetch(`https://api.sampleapis.com/movies/${genre}/${id}`);
   }, [id, genre]);
 
   return (
@@ -46,12 +47,13 @@ const Detail = (props) => {
 
 const Container = styled.div`
   position: relative;
-  min-height: 100vh;
+
   height: 100vh;
   overflow-x: hidden;
+  overflow: hidden;
   display: flex;
 
-  padding: 0 calc(3.5vw + 5px);
+
   background: linear-gradient(
       to left,
       rgba(0, 0, 0, 0) 0%,
