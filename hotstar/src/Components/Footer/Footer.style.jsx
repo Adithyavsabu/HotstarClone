@@ -6,16 +6,16 @@ export const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
- 
+  width: 100%;
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 125px;
-  width: 1104px;
- align-items: flex-start;
+  width: 100%;
+  align-items: flex-start;
 
   h4 {
     color: #e1e6f0;
@@ -60,37 +60,31 @@ export const Connect = styled.div`
 `;
 
 export const CopyRights = styled.div`
-  
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   line-height: 24px;
-  height:84px;
-  justify-content: space-between;
+  height: 84px;
+  justify-content: space-around;
   padding-top: 50px;
-width: 1104px;
+  width: 1104px;
 `;
 export const Rights = styled.div`
-  
   display: flex;
   flex-direction: column;
   //flex-basis: 70%;
-  
-span{
+
+  span {
     font-size: 15px;
     line-height: 10px;
-}
-
-
+  }
 `;
 export const App = styled.div`
-  
   display: flex;
   flex-direction: row;
 
-  img{
+  img {
     height: 40px;
     width: 120px;
   }
 `;
-

@@ -74,6 +74,7 @@ const Container = styled.div`
   gap: 5px;
   flex-wrap: wrap;
   z-index: 1;
+  width: 100%;
 `;
 
 const Wrap = styled.div`

@@ -31,7 +31,7 @@ export const MovieOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color:rgb(22, 24, 31);
+  background-color: rgb(22, 24, 31);
   background-image: linear-gradient(
     360deg,
     rgb(22, 24, 31) 50%,
@@ -55,7 +55,7 @@ export const Overlay = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-  background: black;
+  background-color: rgba(22, 24, 31, 1);
   z-index: 1;
 
   transition: 0.3s ease-in-out;
@@ -171,7 +171,6 @@ export const Wrap = styled.div`
         position: relative;
       }
     }
-   
   }
 `;
 
@@ -185,7 +184,6 @@ export const NextArrow = styled.button`
   z-index: 10;
   height: 100%;
   align-items: center;
-
 `;
 
 export const PrevArrow = styled.button`

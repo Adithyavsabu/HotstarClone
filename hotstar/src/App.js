@@ -4,7 +4,6 @@ import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import { SideBar } from "./Components/SideBar/SideBar";
-import  Footer from "./Components/Footer/Footer"
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/details/:genre/:id" element={<Details />} />
       </Routes>
-    
     </BrowserRouter>
   );
 }

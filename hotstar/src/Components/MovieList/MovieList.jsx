@@ -1,10 +1,9 @@
 import React from "react";
 import { Moviecontainer, Recommend } from "./MovieList.style";
 import MovieCarousel from "../MovieCarousel/MovieCarousel";
-import ImgSlider from "../MovieCarousel/ImgSlider";
+import Slider from "../MovieCarousel/Slider";
 import Studios from "../../Components/Studios/Studios";
 import Footer from "../Footer/Footer";
-
 
 const MovieList = ({ familyMovies, horrorMovies }) => {
   const familyMoviesArray = Array.isArray(familyMovies)
@@ -17,17 +16,17 @@ const MovieList = ({ familyMovies, horrorMovies }) => {
   return (
     <Moviecontainer>
       <Recommend>
-        <h4>Latest Releases</h4>
-        <MovieCarousel movies={familyMoviesArray} genre="family" />
+        {/* <h4>Latest Releases</h4> */}
+        <Slider movies={familyMoviesArray} genre="family" />
       </Recommend>
       <Recommend>
-        <h4>Horror</h4>
-        <MovieCarousel movies={horrorArrayArray} genre="horror" />
+        {/* <h4>Horror</h4> */}
+        <Slider movies={horrorArrayArray} genre="horror" />
       </Recommend>
       <Studios />
-  
-      <ImgSlider movies={familyMoviesArray} />
-      <Footer/>
+      {/* <h4>Popular in Movies</h4> */}
+      <Slider movies={familyMoviesArray} genre="horror" />
+      <Footer />
     </Moviecontainer>
   );
 };
