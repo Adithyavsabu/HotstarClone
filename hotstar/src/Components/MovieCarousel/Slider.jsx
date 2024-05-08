@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronLeft,
-  faChevronRight,
+ 
   faPlay,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +15,7 @@ import {
   Subscribe,
   Description,
   AboutMovie,
+  Details,
 } from "./Slider.Style";
 
 import {
@@ -39,7 +39,7 @@ const ImgSlider = ({ movies, genre }) => {
   return (
     <Container>
       <Heading>
-        <h4>{genre} </h4>
+        <h2>{genre} </h2>
       </Heading>
       <Carousel {...settings}>
         {movies.map((movie, index) => (
@@ -48,6 +48,7 @@ const ImgSlider = ({ movies, genre }) => {
 
             <MovieDetails>
               <img src={movie.posterURL} alt="" />
+              <Details>
               <Subscribe>
                 <Link to={`http://localhost:3000/details/${genre}/${movie.id}`}>
                   <WatchNowButton>
@@ -71,16 +72,19 @@ const ImgSlider = ({ movies, genre }) => {
                 </Watchlist>
               </Subscribe>
               <AboutMovie>
+                <span>
                 <span>2h 30m</span> <Dot />
-                <span> 1 Season</span>
+                <span> 1 Season</span></span>
               </AboutMovie>
               <Description>
                 <p>
                   Three teenagers reaches Bangalore for their engineering degree
-                  and gets involved in a fight with seniors. .
+                  and gets involved in a fight with seniors.
                 </p>
               </Description>
+              </Details>
             </MovieDetails>
+         
           </Wrap>
         ))}
       </Carousel>

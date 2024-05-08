@@ -53,8 +53,7 @@ export const Description = styled.div`
     color: rgba(255, 255, 255, 0.84);
     overflow-wrap: break-word;
 
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+ 
   }
 `;
 

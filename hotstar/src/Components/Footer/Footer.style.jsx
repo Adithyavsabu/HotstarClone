@@ -1,12 +1,15 @@
 import { styled } from "styled-components";
 
 export const FooterContainer = styled.div`
+
   background-color: #000000;
   height: 300px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  padding-top: 40px;
+  z-index: 1;
 `;
 
 export const Content = styled.div`

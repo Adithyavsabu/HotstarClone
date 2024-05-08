@@ -6,29 +6,29 @@ import Slider from "react-slick";
 export const Container = styled.div`
   position: relative;
   display: flex;
-  flex-direction: row;
-  height: 360px;
+  flex-direction: column;
+height: 100%;
   z-index: 5;
+ 
 `;
 export const Heading = styled.div`
   position: absolute;
-  display: flex;
+  display: block;
   justify-content: flex-start;
   z-index: 1;
   h4 {
-    padding-top: 10px;
+ 
   }
 `;
 
 export const Carousel = styled(Slider)`
   display: flex;
-
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
   z-index: 2;
-
+padding-top: 10px;
   overflow: hidden;
 
   & > button {
@@ -55,15 +55,13 @@ export const Carousel = styled(Slider)`
 
   .slick-list {
     width: 100%;
-
-    position: relative;
-
     overflow: visible;
     z-index: 5;
   }
 
   .slick-slide {
     padding: 3px;
+
   }
 
   .slick-prev {
@@ -74,12 +72,12 @@ export const Carousel = styled(Slider)`
     right: 0;
   }
 
-  .slick-next,
+  /* .slick-next,
   .slick-prev {
     height: 100%;
     width: 150px;
     z-index: 2;
-  }
+  } */
 
   .slick-arrow {
     color: white;
@@ -132,7 +130,7 @@ export const MovieDetails = styled.div`
     rgba(22, 24, 31, 0.2) 62%
   );
   color: white;
-  padding: 10px;
+  
   opacity: 0;
   background-color: rgb(22, 24, 31);
   transition: opacity 0.3s ease;
@@ -142,6 +140,8 @@ export const MovieDetails = styled.div`
     margin: 0;
   }
 `;
+
+
 
 export const Wrap = styled.div`
   border-radius: 4px;
@@ -163,7 +163,7 @@ export const Wrap = styled.div`
     //background-color: rgb(22,24,31);
     transition-duration: 300ms;
     //  border: 4px solid white;
-    transform: scale(1.7);
+    transform: scale(1.5);
     z-index: 7;
 
     ${MovieDetails} {
@@ -181,6 +181,17 @@ export const Wrap = styled.div`
   }
 `;
 
+export const Details= styled.div`
+display: flex;
+flex-direction: column;
+height: 50%;
+width: 100%;
+justify-content: flex-start;
+align-items: flex-start;
+
+`;
+
+
 export const Subscribe = styled.div`
   position: relative;
   box-sizing: border-box;
@@ -192,6 +203,7 @@ export const Subscribe = styled.div`
   align-items: center;
   width: 100%;
   z-index: 3;
+  
 `;
 
 export const WatchNowButton = styled.button`
@@ -200,8 +212,8 @@ export const WatchNowButton = styled.button`
   align-items: center;
   justify-content: center;
   height: 30px;
-  min-width: min-content;
-  width: 150px;
+ min-width: min-content;
+width: 140px;
   background-color: white;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -227,10 +239,8 @@ export const Watchlist = styled.button`
   align-items: center;
   box-sizing: border-box;
   display: flex;
-
   height: 30px;
   justify-content: center;
-
   overflow-x: hidden;
   overflow-y: hidden;
   padding-bottom: 14px;
@@ -243,6 +253,7 @@ export const Watchlist = styled.button`
   border-bottom-right-radius: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+
   span {
     box-sizing: border-box;
     display: block;
@@ -254,10 +265,10 @@ export const Watchlist = styled.button`
 
 export const AboutMovie = styled.div`
   box-sizing: border-box;
-  display: block;
-  height: 18px;
-  padding-top: 12px;
-  width: 216px;
+  display: flex;
+
+  //padding-top: 8px;
+  width: 100%;
   color: rgb(255, 255, 255);
   font-size: 10px;
   font-weight: 600;
@@ -265,23 +276,18 @@ export const AboutMovie = styled.div`
 
 export const Description = styled.div`
   width: 216x;
-  padding-top: 8px;
+ // padding-top: 4px;
   display: flex;
-  height: 52px;
+  //height: 52px;
   box-sizing: border-box;
   p {
     display: -webkit-box;
-    height: 72px;
+    
     overflow-x: hidden;
     overflow-y: hidden;
-    width: 216x;
-
+    width: 100%;
     font-size: 10px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.84);
-    overflow-wrap: break-word;
-
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
   }
 `;

@@ -6,7 +6,9 @@ export const Moviecontainer = styled.div`
   flex-direction: column;
   width: 100%;
   z-index: 1;
-  top: 10vh;
+  //top: 10vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-image: linear-gradient(
     360deg,
     #000000 70%,
@@ -14,8 +16,13 @@ export const Moviecontainer = styled.div`
   );
 `;
 export const Recommend = styled.div`
+height: 320px;
+z-index: 10;
+
+
 h4{
-  padding-top: 40px;
+ // padding-top: 30px;
+
 }
 
 `;

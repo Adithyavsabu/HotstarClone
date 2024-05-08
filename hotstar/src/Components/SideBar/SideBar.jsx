@@ -1,7 +1,6 @@
 
+import React from "react";
 import { NavBar, Logo, NavMenu, Nav } from "./SideBar.style";
-
-import { useState } from "react";
 
 export const SideBar = () => {
   return (

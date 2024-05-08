@@ -6,14 +6,17 @@ import MovieList from "../../Components/MovieList/MovieList";
 import { Container, ScrollDiv } from "./Home.style";
 import { getMovies } from "../../api/getMovies";
 
-
 const Home = () => {
-  const [familyMovies, setFamily] = useState([]);
-  const [horrorMovies, setHorror] = useState([]);
+  const [familyGenre, setFamily] = useState([]);
+  const [horrorGenre, setHorror] = useState([]);
+  const [mysteryGenre, setMystery] = useState([]);
+  const [dramaGenre, setDrama] = useState([]);
 
   useEffect(() => {
     getMovies("family").then((result) => setFamily(result));
     getMovies("horror").then((result) => setHorror(result));
+    getMovies("mystery").then((result) => setMystery(result));
+    getMovies("drama").then((result) => setDrama(result));
   }, []);
 
   // const getData = () => {
@@ -40,14 +43,16 @@ const Home = () => {
   // };
 
   return (
-
     <ScrollDiv>
       <TrailerPreview />
       <PreviewDetails />
-      <MovieList familyMovies={familyMovies} horrorMovies={horrorMovies} />
-   
+      <MovieList
+        familyGenre={familyGenre}
+        horrorGenre={horrorGenre}
+        mysteryGenre={mysteryGenre}
+        dramaGenre={dramaGenre}
+      />
     </ScrollDiv>
-      
   );
 };
 
