@@ -1,4 +1,4 @@
-const LanguageCardsData = [
+const Language = [
   { id: 1, imagepath: "/images/hindi.webp" },
   { id: 2, imagepath: "/images/english.webp" },
   { id: 3, imagepath: "/images/tamil.webp" },
@@ -11,4 +11,4 @@ const LanguageCardsData = [
   { id: 10, imagepath: "/images/odia.webp" },
 ];
 
-export default LanguageCardsData;
+export default Language;

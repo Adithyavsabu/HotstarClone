@@ -8,7 +8,7 @@ import {
 
   Wrap,
 } from "./Cards.Style";
-const Cards = ({data}) => {
+const Cards = ({data,heading}) => {
   let settings = {
     infinite: false,
     speed: 500,
@@ -21,6 +21,7 @@ const Cards = ({data}) => {
   };
   return (
     <Container>
+      <Heading><h3>{heading}</h3></Heading>
       <Carousel {...settings}>
         {data.map((data, index) => (
           <Wrap key={index}>

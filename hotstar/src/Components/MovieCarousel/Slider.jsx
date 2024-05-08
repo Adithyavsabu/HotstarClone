@@ -25,7 +25,7 @@ import {
   MovieDetails,
   Wrap,
 } from "./Slider.Style";
-const ImgSlider = ({ movies, genre }) => {
+const ImgSlider = ({ movies, genre, heading }) => {
   let settings = {
     infinite: false,
     speed: 500,
@@ -39,7 +39,7 @@ const ImgSlider = ({ movies, genre }) => {
   return (
     <Container>
       <Heading>
-        <h2>{genre} </h2>
+        <h3>{heading} </h3>
       </Heading>
       <Carousel {...settings}>
         {movies.map((movie, index) => (

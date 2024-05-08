@@ -12,6 +12,17 @@ height: 100%;
  
 `;
 
+export const Heading = styled.div`
+
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 1;
+  h4 {
+ 
+  }
+  `;
+
 export const Carousel = styled(Slider)`
   display: flex;
   justify-content: center;
@@ -19,7 +30,7 @@ export const Carousel = styled(Slider)`
   width: 100%;
   height: 100%;
   z-index: 2;
-padding-top: 10px;
+
   overflow: hidden;
 
   & > button {

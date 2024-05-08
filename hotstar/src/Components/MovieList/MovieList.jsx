@@ -3,9 +3,9 @@ import { Moviecontainer, Recommend } from "./MovieList.style";
 import Slider from "../MovieCarousel/Slider";
 import Studios from "../../Components/Studios/Studios";
 import Footer from "../Footer/Footer";
-import LanguageCards from "../Cards/Cards";
-import {default as data} from "../Cards/LanguageCards";
-
+import Cards from "../Cards/Cards";
+import {default as language} from "../Cards/Language";
+import {default as genre} from "../Cards/Genre"
 const MovieList = ({ familyGenre, horrorGenre , mysteryGenre , dramaGenre}) => {
   const familyMovies = Array.isArray(familyGenre)
     ? familyGenre
@@ -27,21 +27,22 @@ const MovieList = ({ familyGenre, horrorGenre , mysteryGenre , dramaGenre}) => {
     <Moviecontainer>
       <Recommend>
         {/* <h4>Latest Releases</h4> */}
-        <Slider movies={familyMovies} genre="family" />
+        <Slider movies={familyMovies} genre="family" heading="Family"/>
       </Recommend>
       <Recommend>
         {/* <h4>Horror</h4> */}
-        <Slider movies={horrorMovies} genre="horror" />
+        <Slider movies={horrorMovies} genre="horror" heading="Horror"/>
         </Recommend>
       <Studios />
-      <LanguageCards data={data}/>
+      <Cards data={language} heading="Popular Languages"/>
+      <Cards data={genre} heading="Popular Genres"/>
       {/* <h4>Popular in Movies</h4> */}
       <Recommend>
-      <Slider movies={dramaMovies} genre="drama" />
+      <Slider movies={dramaMovies} genre="drama" heading="Drama"/>
       </Recommend>
 
       <Recommend>
-      <Slider movies={mysteryMovies} genre="mystery" />
+      <Slider movies={mysteryMovies} genre="mystery" heading="Mystery" />
       </Recommend>
     </Moviecontainer>
     
