@@ -7,21 +7,26 @@ import { SideBar } from "./Components/SideBar/SideBar";
 import { createContext, useState } from "react";
 import FavouriteContext from "./context/FavouriteContext";
 
-
 function App() {
-
-
-const [favouriteCount, setFavouriteCount] = useState(0);
+  const [favouriteCount, setFavouriteCount] = useState(0);
+  const [selectedMovies, setSelectedMovies] = useState([]);
   return (
-    <FavouriteContext.Provider value={{favouriteCount ,setFavouriteCount}}>
-    <BrowserRouter>
-      <SideBar favouriteCount={favouriteCount}/>
-      <Routes>
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/details/:genre/:id" element={<Details />} />
-      </Routes>
-    </BrowserRouter>
+    <FavouriteContext.Provider
+      value={{
+        favouriteCount,
+        setFavouriteCount,
+        selectedMovies,
+        setSelectedMovies,
+      }}
+    >
+      <BrowserRouter>
+        <SideBar favouriteCount={favouriteCount} />
+        <Routes>
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/details/:genre/:id" element={<Details />} />
+        </Routes>
+      </BrowserRouter>
     </FavouriteContext.Provider>
   );
 }

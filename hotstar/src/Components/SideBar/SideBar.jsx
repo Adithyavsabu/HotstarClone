@@ -1,4 +1,4 @@
-import React, { useState , useContext } from "react";
+import React, { useState, useContext } from "react";
 import { NavBar, Logo, NavMenu, Nav } from "./SideBar.style";
 import Modal from "../Modal/Modal";
 import FavouriteContext from "../../context/FavouriteContext";
@@ -6,7 +6,7 @@ import FavouriteContext from "../../context/FavouriteContext";
 export const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const {favouriteCount,setFavouriteCount} = useContext(FavouriteContext);
+  const { favouriteCount, setFavouriteCount } = useContext(FavouriteContext);
   return (
     <NavBar>
       <Logo>
@@ -47,23 +47,16 @@ export const SideBar = () => {
               <img src="/images/cat-icon.svg" alt="HOME" />
               <span>Categories</span>
             </a>
-            <div>
-              <a>
-                <button onClick={() => setIsOpen(true)}>
-                  <img src="/images/star.svg" alt="Favourite" />
-                </button>
-                <span>Favourites</span>
-              </a>
-              <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                Fancy Modal
-                <span>{favouriteCount}</span>
-              </Modal> 
-            </div>
+
+            <a onClick={() => setIsOpen(true)}>
+              <img src="/images/star.svg" alt="Favourite" />
+              <span>Favourites</span>
+            </a>
+
+            <Modal open={isOpen} onClose={() => setIsOpen(false)}></Modal>
           </span>
         </NavMenu>
       </Nav>
     </NavBar>
   );
 };
-
-

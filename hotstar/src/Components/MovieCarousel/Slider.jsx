@@ -1,4 +1,4 @@
-import React, { useState , useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -21,26 +21,35 @@ import {
   Favourite,
 } from "./Slider.Style";
 import FavouriteContext from "../../context/FavouriteContext";
+import Modal from "../Modal/Modal";
 
 const ImgSlider = ({ movies, genre, heading }) => {
-
-  const {favouriteCount,setFavouriteCount} = useContext(FavouriteContext);
+  const { favouriteCount, setFavouriteCount } = useContext(FavouriteContext);
   const [favourites, setFavourites] = useState([]);
+  const { selectedMovies, setSelectedMovies } = useContext(FavouriteContext);
 
-  const handleFavouriteList = (id) => {
-    if (favourites.includes(id)) {
-      setFavourites(favourites.filter((favourite) => favourite !== id));
+  const handleFavouriteList = (movie) => {
+    console.log("movie is ", movie);
+    if (favourites.includes(movie.id)) {
+      setFavourites(favourites.filter((favourite) => favourite !== movie.id));
       setFavouriteCount(favouriteCount - 1);
-      console.log("removed 1", favourites);
+      setSelectedMovies(
+        selectedMovies.filter((selectedMovie) => selectedMovie.id !== movie.id)
+      );
     } else {
-      setFavourites([...favourites, id]);
+      setFavourites([...favourites, movie.id]);
       setFavouriteCount(favouriteCount + 1);
-      console.log("added 1", favourites);
+      setSelectedMovies((prevSelectedMovies) => [...prevSelectedMovies, movie]);
     }
   };
 
   useEffect(() => {
-    console.log("favourites", favourites); // to load the data when the site laods or it will result in asynchronous operations of data
+    console.log("favourites :", favourites);
+    console.log("selected movies rae :", selectedMovies);
+    console.log("favourites  count:", favouriteCount);
+
+    // localStorage.setItem("favourites", JSON.stringify(favourites));
+    // to load the data when the site laods or it will result in asynchronous operations of data
   }, [favourites]);
 
   let settings = {
@@ -89,7 +98,7 @@ const ImgSlider = ({ movies, genre, heading }) => {
                       />
                     </span>
                   </Watchlist>
-                  <Favourite onClick={() => handleFavouriteList(movie.id)}>
+                  <Favourite onClick={() => handleFavouriteList(movie)}>
                     {favourites.includes(movie.id) ? (
                       <FontAwesomeIcon
                         icon={faStar}
@@ -103,6 +112,7 @@ const ImgSlider = ({ movies, genre, heading }) => {
                       // onClick={() => handleFavouriteList(movie.id)}
                       // style={{ color: favourites.includes(movie.id) ? "yellow" : "#f9fafa" }}
                     )}
+                    <Modal selectedMovies={selectedMovies} />
                   </Favourite>
                 </Subscribe>
                 <AboutMovie>
