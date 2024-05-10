@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPlus } from "@fortawesome/free-solid-svg-icons";
-import { Dot, Pipe } from "../../Components/Utils.style/utilities.style";
+import { Dot, Pipe } from "../../common/styles";
 import {
   PreviewContent,
   SubscribeText,

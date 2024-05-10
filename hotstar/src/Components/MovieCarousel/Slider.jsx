@@ -1,11 +1,11 @@
-import React, { useState} from "react";
+import React, { useState , useContext } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPlus, faStar } from "@fortawesome/free-solid-svg-icons";
 
-import { Dot } from "../Utils.style/utilities.style";
+import { Dot } from "../../common/styles";
 import {
   WatchNowButton,
   Watchlist,
@@ -20,16 +20,21 @@ import {
   Wrap,
   Favourite,
 } from "./Slider.Style";
+import FavouriteContext from "../../context/FavouriteContext";
 
 const ImgSlider = ({ movies, genre, heading }) => {
+
+  const {favouriteCount,setFavouriteCount} = useContext(FavouriteContext);
   const [favourites, setFavourites] = useState([]);
 
   const handleFavouriteList = (id) => {
     if (favourites.includes(id)) {
       setFavourites(favourites.filter((favourite) => favourite !== id));
+      setFavouriteCount(favouriteCount - 1);
       console.log("removed 1", favourites);
     } else {
       setFavourites([...favourites, id]);
+      setFavouriteCount(favouriteCount + 1);
       console.log("added 1", favourites);
     }
   };
@@ -72,7 +77,6 @@ const ImgSlider = ({ movies, genre, heading }) => {
                           icon={faPlay}
                           style={{ color: "black" }}
                         />
-                        
                         &nbsp;&nbsp;Watch Now
                       </span>
                     </WatchNowButton>

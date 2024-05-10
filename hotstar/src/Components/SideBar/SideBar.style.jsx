@@ -137,6 +137,16 @@ export const NavMenu = styled.div`
         height: 22px;
       }
 
+      button{
+        background-color: transparent;
+        border: none;
+        outline: none;
+        display: flex ;
+        justify-content: center;
+        align-items: center;
+        
+      }
+
       span {
         display: none;
 

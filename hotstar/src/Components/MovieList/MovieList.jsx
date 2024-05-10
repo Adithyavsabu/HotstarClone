@@ -4,8 +4,8 @@ import Slider from "../MovieCarousel/Slider";
 import Studios from "../../Components/Studios/Studios";
 import Footer from "../Footer/Footer";
 import Cards from "../Cards/Cards";
-import { default as language } from "../Cards/Language";
-import { default as genre } from "../Cards/Genre";
+import { default as language } from "../../data/Language";
+import { default as genre } from "../../data/Genre";
 const MovieList = ({ familyGenre, horrorGenre, mysteryGenre, dramaGenre }) => {
   const familyMovies = Array.isArray(familyGenre)
     ? familyGenre
