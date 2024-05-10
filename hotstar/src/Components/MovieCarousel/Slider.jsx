@@ -112,7 +112,6 @@ const ImgSlider = ({ movies, genre, heading }) => {
                       // onClick={() => handleFavouriteList(movie.id)}
                       // style={{ color: favourites.includes(movie.id) ? "yellow" : "#f9fafa" }}
                     )}
-                    <Modal selectedMovies={selectedMovies} />
                   </Favourite>
                 </Subscribe>
                 <AboutMovie>
