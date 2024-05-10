@@ -7,9 +7,8 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-height: 100%;
+  height: 100%;
   z-index: 5;
- 
 `;
 export const Heading = styled.div`
   position: absolute;
@@ -17,7 +16,6 @@ export const Heading = styled.div`
   justify-content: flex-start;
   z-index: 1;
   h4 {
- 
   }
 `;
 
@@ -28,7 +26,7 @@ export const Carousel = styled(Slider)`
   width: 100%;
   height: 100%;
   z-index: 2;
-padding-top: 10px;
+  padding-top: 10px;
   overflow: hidden;
 
   & > button {
@@ -61,7 +59,6 @@ padding-top: 10px;
 
   .slick-slide {
     padding: 3px;
-
   }
 
   .slick-prev {
@@ -82,6 +79,10 @@ padding-top: 10px;
   .slick-arrow {
     color: white;
     z-index: 10;
+    outline: none;
+    border: none;
+    width: 10%;
+
     /* other styles */
   }
 
@@ -115,33 +116,26 @@ export const MovieDetails = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(
-    to top,
-    rgba(22, 24, 31, 1) 0%,
-    rgba(22, 24, 31, 1) 40%,
-    rgba(22, 24, 31, 1) 45%,
-    rgba(22, 24, 31, 1) 50%,
-    rgba(22, 24, 31, 0.9) 40%,
-    rgba(22, 24, 31, 0.9) 45%,
-    rgba(22, 24, 31, 0.7) 48%,
-    rgba(22, 24, 31, 0.5) 50%,
-    rgba(22, 24, 31, 0.4) 50%,
-    rgba(22, 24, 31, 0.3) 54%,
-    rgba(22, 24, 31, 0.2) 62%
-  );
+
   color: white;
-  
+
   opacity: 0;
-  background-color: rgb(22, 24, 31);
+   background-color: rgb(22, 24, 31);
   transition: opacity 0.3s ease;
   z-index: 3;
   overflow: hidden;
+  background-color: linear-gradient(
+      to top,
+      #16181f,
+      #48494f,
+      #818186,
+      #bebec1,
+     
+    );
   h3 {
     margin: 0;
   }
 `;
-
-
 
 export const Wrap = styled.div`
   border-radius: 4px;
@@ -149,7 +143,7 @@ export const Wrap = styled.div`
   position: relative;
 
   height: 230px;
-  width: 170px;
+  width: 180px;
 
   img {
     width: 100%;
@@ -163,7 +157,7 @@ export const Wrap = styled.div`
     //background-color: rgb(22,24,31);
     transition-duration: 300ms;
     //  border: 4px solid white;
-    transform: scale(1.5);
+    transform: scale(1.6);
     z-index: 7;
 
     ${MovieDetails} {
@@ -178,19 +172,18 @@ export const Wrap = styled.div`
       position: absolute;
       z-index: 3;
     }
+  
   }
 `;
 
-export const Details= styled.div`
-display: flex;
-flex-direction: column;
-height: 50%;
-width: 100%;
-justify-content: flex-start;
-align-items: flex-start;
-
+export const Details = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
-
 
 export const Subscribe = styled.div`
   position: relative;
@@ -198,12 +191,12 @@ export const Subscribe = styled.div`
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  height: 35px;
-  justify-content: center;
+  height: 30px;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   z-index: 3;
-  
+  padding-bottom: 8px;
 `;
 
 export const WatchNowButton = styled.button`
@@ -212,14 +205,14 @@ export const WatchNowButton = styled.button`
   align-items: center;
   justify-content: center;
   height: 30px;
- min-width: min-content;
-width: 140px;
+  min-width: min-content;
+  width: 100%;
   background-color: white;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-
+  border-style: hidden;
   cursor: pointer;
   transition-duration: 0.3s;
   transition-property: transform, background-color;
@@ -253,6 +246,7 @@ export const Watchlist = styled.button`
   border-bottom-right-radius: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  border-style: hidden;
 
   span {
     box-sizing: border-box;
@@ -266,7 +260,8 @@ export const Watchlist = styled.button`
 export const AboutMovie = styled.div`
   box-sizing: border-box;
   display: flex;
-
+  align-items: center;
+  justify-content: start;
   //padding-top: 8px;
   width: 100%;
   color: rgb(255, 255, 255);
@@ -276,13 +271,13 @@ export const AboutMovie = styled.div`
 
 export const Description = styled.div`
   width: 216x;
- // padding-top: 4px;
+  // padding-top: 4px;
   display: flex;
   //height: 52px;
   box-sizing: border-box;
   p {
     display: -webkit-box;
-    
+
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100%;
@@ -290,4 +285,9 @@ export const Description = styled.div`
     font-weight: 400;
     color: rgba(255, 255, 255, 0.84);
   }
+`;
+
+export const Favourite = styled.div`
+  display: flex;
+  align-items: center;
 `;

@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useState} from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
- 
-  faPlay,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPlus, faStar } from "@fortawesome/free-solid-svg-icons";
 
 import { Dot } from "../Utils.style/utilities.style";
 import {
@@ -16,16 +13,31 @@ import {
   Description,
   AboutMovie,
   Details,
-} from "./Slider.Style";
-
-import {
   Container,
   Heading,
   Carousel,
   MovieDetails,
   Wrap,
+  Favourite,
 } from "./Slider.Style";
+
 const ImgSlider = ({ movies, genre, heading }) => {
+  const [favourites, setFavourites] = useState([]);
+
+  const handleFavouriteList = (id) => {
+    if (favourites.includes(id)) {
+      setFavourites(favourites.filter((favourite) => favourite !== id));
+      console.log("removed 1", favourites);
+    } else {
+      setFavourites([...favourites, id]);
+      console.log("added 1", favourites);
+    }
+  };
+
+  useEffect(() => {
+    console.log("favourites", favourites); // to load the data when the site laods or it will result in asynchronous operations of data
+  }, [favourites]);
+
   let settings = {
     infinite: false,
     speed: 500,
@@ -49,42 +61,60 @@ const ImgSlider = ({ movies, genre, heading }) => {
             <MovieDetails>
               <img src={movie.posterURL} alt="" />
               <Details>
-              <Subscribe>
-                <Link to={`http://localhost:3000/details/${genre}/${movie.id}`}>
-                  <WatchNowButton>
+                <Subscribe>
+                  <Link
+                    to={`http://localhost:3000/details/${genre}/${movie.id}`}
+                  >
+                    <WatchNowButton>
+                      <span>
+                        {" "}
+                        <FontAwesomeIcon
+                          icon={faPlay}
+                          style={{ color: "black" }}
+                        />
+                        
+                        &nbsp;&nbsp;Watch Now
+                      </span>
+                    </WatchNowButton>
+                  </Link>
+                  <Watchlist>
                     <span>
-                      {" "}
                       <FontAwesomeIcon
-                        icon={faPlay}
-                        style={{ color: "black" }}
+                        icon={faPlus}
+                        style={{ color: "#ffffff" }}
                       />
-                      &nbsp;&nbsp;Watch Now
                     </span>
-                  </WatchNowButton>
-                </Link>
-                <Watchlist>
+                  </Watchlist>
+                  <Favourite onClick={() => handleFavouriteList(movie.id)}>
+                    {favourites.includes(movie.id) ? (
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        style={{ color: "yellow" }}
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        style={{ color: "#f9fafa" }}
+                      />
+                      // onClick={() => handleFavouriteList(movie.id)}
+                      // style={{ color: favourites.includes(movie.id) ? "yellow" : "#f9fafa" }}
+                    )}
+                  </Favourite>
+                </Subscribe>
+                <AboutMovie>
                   <span>
-                    <FontAwesomeIcon
-                      icon={faPlus}
-                      style={{ color: "#ffffff" }}
-                    />
+                    <span>2h 30m</span> <Dot />
+                    <span> 1 Season</span>
                   </span>
-                </Watchlist>
-              </Subscribe>
-              <AboutMovie>
-                <span>
-                <span>2h 30m</span> <Dot />
-                <span> 1 Season</span></span>
-              </AboutMovie>
-              <Description>
-                <p>
-                  Three teenagers reaches Bangalore for their engineering degree
-                  and gets involved in a fight with seniors.
-                </p>
-              </Description>
+                </AboutMovie>
+                <Description>
+                  <p>
+                    Three teenagers reaches Bangalore for their engineering
+                    degree and gets involved in a fight with seniors.
+                  </p>
+                </Description>
               </Details>
             </MovieDetails>
-         
           </Wrap>
         ))}
       </Carousel>

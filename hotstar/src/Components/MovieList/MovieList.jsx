@@ -4,50 +4,47 @@ import Slider from "../MovieCarousel/Slider";
 import Studios from "../../Components/Studios/Studios";
 import Footer from "../Footer/Footer";
 import Cards from "../Cards/Cards";
-import {default as language} from "../Cards/Language";
-import {default as genre} from "../Cards/Genre"
-const MovieList = ({ familyGenre, horrorGenre , mysteryGenre , dramaGenre}) => {
+import { default as language } from "../Cards/Language";
+import { default as genre } from "../Cards/Genre";
+const MovieList = ({ familyGenre, horrorGenre, mysteryGenre, dramaGenre }) => {
   const familyMovies = Array.isArray(familyGenre)
     ? familyGenre
     : Object.values(familyGenre);
   const horrorMovies = Array.isArray(horrorGenre)
     ? horrorGenre
     : Object.values(horrorGenre);
-    const mysteryMovies = Array.isArray(mysteryGenre)
+  const mysteryMovies = Array.isArray(mysteryGenre)
     ? mysteryGenre
     : Object.values(mysteryGenre);
   const dramaMovies = Array.isArray(dramaGenre)
     ? dramaGenre
     : Object.values(dramaGenre);
 
-    
-
   return (
     <>
-    <Moviecontainer>
-      <Recommend>
-        {/* <h4>Latest Releases</h4> */}
-        <Slider movies={familyMovies} genre="family" heading="Family"/>
-      </Recommend>
-      <Recommend>
-        {/* <h4>Horror</h4> */}
-        <Slider movies={horrorMovies} genre="horror" heading="Horror"/>
+      <Moviecontainer>
+        <Recommend>
+          {/* <h4>Latest Releases</h4> */}
+          <Slider movies={familyMovies} genre="family" heading="Family" />
         </Recommend>
-      <Studios />
-      <Cards data={language} heading="Popular Languages"/>
-      <Cards data={genre} heading="Popular Genres"/>
-      {/* <h4>Popular in Movies</h4> */}
-      <Recommend>
-      <Slider movies={dramaMovies} genre="drama" heading="Drama"/>
-      </Recommend>
+        <Recommend>
+          {/* <h4>Horror</h4> */}
+          <Slider movies={horrorMovies} genre="horror" heading="Horror" />
+        </Recommend>
+        <Studios />
+        <Cards data={language} heading="Popular Languages" />
+        <Cards data={genre} heading="Popular Genres" />
+        {/* <h4>Popular in Movies</h4> */}
+        <Recommend>
+          <Slider movies={dramaMovies} genre="drama" heading="Drama" />
+        </Recommend>
+        <Recommend>
+          <Slider movies={mysteryMovies} genre="mystery" heading="Mystery" />
+        </Recommend>
+      </Moviecontainer>
 
-      <Recommend>
-      <Slider movies={mysteryMovies} genre="mystery" heading="Mystery" />
-      </Recommend>
-    </Moviecontainer>
-    
-     <Footer />
-     </>
+      <Footer />
+    </>
   );
 };
 

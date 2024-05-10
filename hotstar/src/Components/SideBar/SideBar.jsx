@@ -43,6 +43,10 @@ export const SideBar = () => {
               <img src="/images/cat-icon.svg" alt="HOME" />
               <span>Categories</span>
             </a>
+            <a href="/favourites">
+              <img src="/images/star.svg" alt="Favourite" />
+              <span>Favourites</span>
+            </a>
           </span>
         </NavMenu>
       </Nav>
