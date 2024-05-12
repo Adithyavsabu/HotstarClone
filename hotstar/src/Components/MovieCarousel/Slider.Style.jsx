@@ -69,12 +69,20 @@ export const Carousel = styled(Slider)`
     right: 0;
   }
 
-  /* .slick-next,
+  .slick-next,
   .slick-prev {
     height: 100%;
     width: 150px;
     z-index: 2;
-  } */
+  }
+
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: 0;
+  }
 
   .slick-arrow {
     color: white;
@@ -82,8 +90,6 @@ export const Carousel = styled(Slider)`
     outline: none;
     border: none;
     width: 10%;
-
-    /* other styles */
   }
 
   .slick-prev,
@@ -100,10 +106,6 @@ export const Carousel = styled(Slider)`
   .slick-prev.slick-disabled:before {
     display: none;
   }
-
-  /* .slick-arrow {
-    background-color: transparent;
-  } */
 `;
 
 export const MovieDetails = styled.div`
@@ -116,22 +118,14 @@ export const MovieDetails = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-
   color: white;
-
   opacity: 0;
-   background-color: rgb(22, 24, 31);
+  background-color: rgb(22, 24, 31);
   transition: opacity 0.3s ease;
   z-index: 3;
-  overflow: hidden;
-  background-color: linear-gradient(
-      to top,
-      #16181f,
-      #48494f,
-      #818186,
-      #bebec1,
-     
-    );
+  box-shadow: (0, 0, 0, 0.57) 1px 31px 23px 1px;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  transform-origin: 168px 197px;
   h3 {
     margin: 0;
   }
@@ -141,8 +135,7 @@ export const Wrap = styled.div`
   border-radius: 4px;
   cursor: pointer;
   position: relative;
-
-  height: 230px;
+  height: 240px;
   width: 180px;
 
   img {
@@ -153,13 +146,9 @@ export const Wrap = styled.div`
 
   &:hover {
     padding: 0;
-    //background-image: linear-gradient(to top, #000, rgba(22,24,31 0.03));
-    //background-color: rgb(22,24,31);
     transition-duration: 300ms;
-    //  border: 4px solid white;
     transform: scale(1.6);
     z-index: 7;
-
     ${MovieDetails} {
       opacity: 1;
     }
@@ -172,7 +161,6 @@ export const Wrap = styled.div`
       position: absolute;
       z-index: 3;
     }
-  
   }
 `;
 
@@ -183,6 +171,10 @@ export const Details = styled.div`
   width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
+  z-index: 10;
+  padding: 5px;
+  box-shadow: (0, 0, 0, 0.57) 1px 31px 23px 1px;
+  // background-image:
 `;
 
 export const Subscribe = styled.div`
@@ -191,7 +183,7 @@ export const Subscribe = styled.div`
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  height: 30px;
+  height: 25px;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
@@ -204,7 +196,7 @@ export const WatchNowButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: 25px;
   min-width: min-content;
   width: 100%;
   background-color: white;
@@ -232,7 +224,7 @@ export const Watchlist = styled.button`
   align-items: center;
   box-sizing: border-box;
   display: flex;
-  height: 30px;
+  height: 25px;
   justify-content: center;
   overflow-x: hidden;
   overflow-y: hidden;

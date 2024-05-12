@@ -101,6 +101,15 @@ export const Nav = styled.aside`
   }
 `;
 
+export const Badge = styled.div`
+  padding: 0px 5px;
+  border-radius: 80%;
+  background-color: red;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 14px;
+`;
+
 export const NavMenu = styled.div`
   display: flex;
   flex-direction: column;
@@ -137,14 +146,13 @@ export const NavMenu = styled.div`
         height: 22px;
       }
 
-      button{
+      button {
         background-color: transparent;
         border: none;
         outline: none;
-        display: flex ;
+        display: flex;
         justify-content: center;
         align-items: center;
-        
       }
 
       span {

@@ -4,30 +4,21 @@ import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
 import Details from "./Pages/Details/Details";
 import { SideBar } from "./Components/SideBar/SideBar";
-import { createContext, useState } from "react";
-import FavouriteContext from "./context/FavouriteContext";
+
+import { FavouriteProvider } from "./context/FavouriteContext";
 
 function App() {
-  const [favouriteCount, setFavouriteCount] = useState(0);
-  const [selectedMovies, setSelectedMovies] = useState([]);
   return (
-    <FavouriteContext.Provider
-      value={{
-        favouriteCount,
-        setFavouriteCount,
-        selectedMovies,
-        setSelectedMovies,
-      }}
-    >
+    <FavouriteProvider>
       <BrowserRouter>
-        <SideBar favouriteCount={favouriteCount} />
+        <SideBar />
         <Routes>
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/" element={<Home />} />
           <Route exact path="/details/:genre/:id" element={<Details />} />
         </Routes>
       </BrowserRouter>
-    </FavouriteContext.Provider>
+    </FavouriteProvider>
   );
 }
 

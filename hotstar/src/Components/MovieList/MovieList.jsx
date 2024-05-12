@@ -1,12 +1,19 @@
 import React from "react";
 import { Moviecontainer, Recommend } from "./MovieList.style";
 import Slider from "../MovieCarousel/Slider";
-import Studios from "../../Components/Studios/Studios";
+import Studios from "../Studios/Studios";
 import Footer from "../Footer/Footer";
 import Cards from "../Cards/Cards";
 import { default as language } from "../../data/Language";
 import { default as genre } from "../../data/Genre";
-const MovieList = ({ familyGenre, horrorGenre, mysteryGenre, dramaGenre }) => {
+import { default as data } from "../../data/movies";
+const MovieList = ({
+  movies,
+  familyGenre,
+  horrorGenre,
+  mysteryGenre,
+  dramaGenre,
+}) => {
   const familyMovies = Array.isArray(familyGenre)
     ? familyGenre
     : Object.values(familyGenre);
@@ -23,6 +30,10 @@ const MovieList = ({ familyGenre, horrorGenre, mysteryGenre, dramaGenre }) => {
   return (
     <>
       <Moviecontainer>
+        <Recommend>
+          {/* <h4>Latest Releases</h4> */}
+          <Slider movies={data} genre="" heading="Latest Releases" />
+        </Recommend>
         <Recommend>
           {/* <h4>Latest Releases</h4> */}
           <Slider movies={familyMovies} genre="family" heading="Family" />

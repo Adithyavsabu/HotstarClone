@@ -1,19 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ReactDom from "react-dom";
-import { Overlay, ModalContainer } from "./Modal.Style";
-import FavouriteContext from "../../context/FavouriteContext";
+import { Overlay, ModalContainer, Heading } from "./Modal.Style";
+import { FavouriteContext } from "../../context/FavouriteContext";
 import ImgSlider from "../MovieCarousel/Slider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Modal = ({ open, children, onClose }) => {
+const Modal = ({ open, onClose }) => {
   const { selectedMovies } = useContext(FavouriteContext);
+
   if (!open) return null;
 
   return ReactDom.createPortal(
     <>
       <Overlay />
       <ModalContainer>
-        <button onClick={onClose}>Close Modal</button>
-        <ImgSlider movies={selectedMovies} heading="Favourites" />
+        <Heading>
+          <h2>Favourites</h2>
+          <button onClick={onClose}>
+            <FontAwesomeIcon
+              icon={faXmark}
+              size="2xl"
+              style={{ color: "#f4f5f6" }}
+            />
+          </button>
+        </Heading>
+        <ImgSlider movies={selectedMovies} />
       </ModalContainer>
     </>,
     document.getElementById("portal")

@@ -13,19 +13,19 @@ const Home = () => {
   const [dramaGenre, setDrama] = useState([]);
 
   useEffect(() => {
+    // fetchMovies().then((result) => setMovies(result));
     getMovies("family").then((result) => setFamily(result));
     getMovies("horror").then((result) => setHorror(result));
     getMovies("mystery").then((result) => setMystery(result));
     getMovies("drama").then((result) => setDrama(result));
   }, []);
 
-
   return (
-    
     <ScrollDiv>
       <TrailerPreview />
       <PreviewDetails />
       <MovieList
+        // movies={movies}
         familyGenre={familyGenre}
         horrorGenre={horrorGenre}
         mysteryGenre={mysteryGenre}

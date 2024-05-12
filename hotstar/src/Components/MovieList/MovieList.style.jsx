@@ -16,13 +16,11 @@ export const Moviecontainer = styled.div`
   );
 `;
 export const Recommend = styled.div`
-height: 320px;
-z-index: 10;
+  height: 320px;
+  z-index: 10;
+  overflow: hidden;
 
-
-h4{
- // padding-top: 30px;
-
-}
-
+  h4 {
+    // padding-top: 30px;
+  }
 `;

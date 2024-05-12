@@ -20,37 +20,34 @@ import {
   Wrap,
   Favourite,
 } from "./Slider.Style";
-import FavouriteContext from "../../context/FavouriteContext";
-import Modal from "../Modal/Modal";
+import { FavouriteContext } from "../../context/FavouriteContext";
 
 const ImgSlider = ({ movies, genre, heading }) => {
-  const { favouriteCount, setFavouriteCount } = useContext(FavouriteContext);
-  const [favourites, setFavourites] = useState([]);
   const { selectedMovies, setSelectedMovies } = useContext(FavouriteContext);
 
+  const isFavorited = (movie) =>
+    selectedMovies.find(
+      (selectedMovie) => selectedMovie.imdbId === movie.imdbId
+    );
+
   const handleFavouriteList = (movie) => {
-    console.log("movie is ", movie);
-    if (favourites.includes(movie.id)) {
-      setFavourites(favourites.filter((favourite) => favourite !== movie.id));
-      setFavouriteCount(favouriteCount - 1);
+    if (isFavorited(movie)) {
       setSelectedMovies(
-        selectedMovies.filter((selectedMovie) => selectedMovie.id !== movie.id)
+        selectedMovies.filter(
+          (selectedMovie) => selectedMovie.imdbId !== movie.imdbId
+        )
       );
     } else {
-      setFavourites([...favourites, movie.id]);
-      setFavouriteCount(favouriteCount + 1);
       setSelectedMovies((prevSelectedMovies) => [...prevSelectedMovies, movie]);
     }
   };
 
   useEffect(() => {
-    console.log("favourites :", favourites);
     console.log("selected movies rae :", selectedMovies);
-    console.log("favourites  count:", favouriteCount);
 
     // localStorage.setItem("favourites", JSON.stringify(favourites));
     // to load the data when the site laods or it will result in asynchronous operations of data
-  }, [favourites]);
+  }, [selectedMovies]);
 
   let settings = {
     infinite: false,
@@ -69,7 +66,7 @@ const ImgSlider = ({ movies, genre, heading }) => {
       </Heading>
       <Carousel {...settings}>
         {movies.map((movie, index) => (
-          <Wrap key={index}>
+          <Wrap key={`${movie.id}_${genre}`}>
             <img src={movie.posterURL} alt="" />
 
             <MovieDetails>
@@ -99,7 +96,7 @@ const ImgSlider = ({ movies, genre, heading }) => {
                     </span>
                   </Watchlist>
                   <Favourite onClick={() => handleFavouriteList(movie)}>
-                    {favourites.includes(movie.id) ? (
+                    {isFavorited(movie) ? (
                       <FontAwesomeIcon
                         icon={faStar}
                         style={{ color: "yellow" }}

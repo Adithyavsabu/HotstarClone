@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
-import { NavBar, Logo, NavMenu, Nav } from "./SideBar.style";
+import { NavBar, Logo, NavMenu, Nav, Badge } from "./SideBar.style";
 import Modal from "../Modal/Modal";
-import FavouriteContext from "../../context/FavouriteContext";
+import { FavouriteContext } from "../../context/FavouriteContext";
 
 export const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { favouriteCount, setFavouriteCount } = useContext(FavouriteContext);
+  const { selectedMovies } = useContext(FavouriteContext);
   return (
     <NavBar>
       <Logo>
@@ -50,6 +50,9 @@ export const SideBar = () => {
 
             <a onClick={() => setIsOpen(true)}>
               <img src="/images/star.svg" alt="Favourite" />
+              {selectedMovies.length > 0 && (
+                <Badge>{selectedMovies.length}</Badge>
+              )}
               <span>Favourites</span>
             </a>
 

@@ -29,3 +29,17 @@ export const getMovie = (id, genre) => {
       throw error;
     });
 };
+
+// export const fetchMovies = async () => {
+//   try {
+//     const response = await fetch(movies);
+//     if (!response.ok) {
+//       throw new Error("Failed to fetch movie data");
+//     }
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error("Error fetching movie data:", error);
+//     return []; // Return an empty array in case of an error
+//   }
+// };

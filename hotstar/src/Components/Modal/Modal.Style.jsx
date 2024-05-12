@@ -1,15 +1,29 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-  height: 80%;
+  height: 70%;
   width: 80%;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: #040714;
   padding: 50px;
   z-index: 1000;
+
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+  }
+`;
+
+export const Heading = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 `;
 
 export const Overlay = styled.div`

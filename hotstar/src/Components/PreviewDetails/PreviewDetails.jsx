@@ -137,7 +137,7 @@ const Container = styled.div`
 
 const Carousel = styled(Slider)`
   display: block;
-padding-top: 10px;
+  padding-top: 10px;
   overflow: hidden;
   z-index: 2;
   height: 58px;

@@ -1,6 +1,15 @@
-
 import React from "react";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 const FavouriteContext = createContext();
-export default FavouriteContext;
+const FavouriteProvider = ({ children }) => {
+  const [selectedMovies, setSelectedMovies] = useState([]);
+
+  return (
+    <FavouriteContext.Provider value={{ selectedMovies, setSelectedMovies }}>
+      {children}
+    </FavouriteContext.Provider>
+  );
+};
+
+export { FavouriteProvider, FavouriteContext };
