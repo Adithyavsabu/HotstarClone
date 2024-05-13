@@ -45,7 +45,6 @@ const ImgSlider = ({ movies, genre, heading }) => {
   useEffect(() => {
     console.log("selected movies rae :", selectedMovies);
 
-    // localStorage.setItem("favourites", JSON.stringify(favourites));
     // to load the data when the site laods or it will result in asynchronous operations of data
   }, [selectedMovies]);
 

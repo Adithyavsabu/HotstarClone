@@ -1,3 +1,5 @@
+import React, { useContext, useEffect } from "react";
+
 import {
   Video,
   Preview,
@@ -6,12 +8,18 @@ import {
   PreviewSlider,
   Subscribe,
 } from "./TrailerPreview.Style";
+import { PreviewContext } from "../../context/PreviewContext";
 
 export const TrailerPreview = (props) => {
+  const { PreviewMovie, setPreviewMovie } = useContext(PreviewContext);
+
+  useEffect(() => {
+    console.log("preview in trailerpreview component", PreviewMovie);
+  }, []);
   return (
     <>
       <Preview>
-        <Video src="/videos/movie-trailer-1.mp4" autoPlay loop muted />
+        <Video src={PreviewMovie.video} autoPlay loop muted />
       </Preview>
     </>
   );

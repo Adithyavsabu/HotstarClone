@@ -62,11 +62,11 @@ export const Carousel = styled(Slider)`
   }
 
   .slick-prev {
-    left: 0;
+    left: -75;
   }
 
   .slick-next {
-    right: 0;
+    right: -75;
   }
 
   .slick-next,
@@ -105,6 +105,12 @@ export const Carousel = styled(Slider)`
   .slick-next.slick-disabled:before,
   .slick-prev.slick-disabled:before {
     display: none;
+  }
+
+  .slick-slide:first-child:not(.slick-active),
+  .slick-slide:first-child:not(.slick-active) {
+    transform: tr;
+    opacity: 0.7;
   }
 `;
 

@@ -1,4 +1,4 @@
-const Preview = [
+const PreviewData = [
   {
     id: 1,
     title: "aavesham",
@@ -15,44 +15,44 @@ const Preview = [
     id: 3,
     title: "aavesham",
     thumbnail: "/images/garuda.jpeg",
-    video: "",
+    video: "/videos/movie-trailer-1.mp4",
   },
   {
     id: 4,
     title: "aavesham",
     thumbnail: "/images/rrr.jpeg",
-    video: "",
+    video: "/videos/movie-trailer-2.mp4",
   },
   {
     id: 5,
     title: "aavesham",
     thumbnail: "/images/rrr.jpeg",
-    video: "",
+    video: "/videos/movie-trailer-1.mp4",
   },
   {
     id: 6,
     title: "aavesham",
     thumbnail: "/images/rrr.jpeg",
-    video: "",
+    video: "/videos/movie-trailer-2.mp4",
   },
   {
     id: 7,
     title: "aavesham",
     thumbnail: "/images/rrr.jpeg",
-    video: "",
+    video: "/videos/movie-trailer-1.mp4",
   },
   {
     id: 8,
     title: "aavesham",
     thumbnail: "/images/rrr.jpeg",
-    video: "",
+    video: "/videos/movie-trailer-2.mp4",
   },
   {
     id: 9,
     title: "aavesham",
     thumbnail: "/images/rrr.jpeg",
-    video: "",
+    video: "/videos/movie-trailer-1.mp4",
   },
 ];
 
-export default Preview;
+export default PreviewData;

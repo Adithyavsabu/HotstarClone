@@ -8,7 +8,6 @@ export const Container = styled.div`
   overflow: hidden;
   display: flex;
 
-
   background: linear-gradient(
       to left,
       rgba(0, 0, 0, 0) 0%,
@@ -24,10 +23,10 @@ export const MovieDetails = styled.div`
   align-items: flex-start;
   justify-content: flex-end;
   height: 488px;
-  top: 200px;
+  top: 100px;
   margin-bottom: 40px;
   padding-left: 90px;
-  padding-top: 50px;
+
   width: 1535.2px;
   z-index: 2;
 `;
@@ -88,12 +87,11 @@ export const Controls = styled.div`
   flex-flow: row nowrap;
 
   min-height: 56px;
-  margin-left: 15px;
 `;
 
 export const Player = styled.button`
   font-size: 15px;
-  margin: 0px 22px 0px 0px;
+  margin: 30px 22px 0px 0px;
   width: 392px;
   height: 56px;
   border-radius: 4px;
@@ -144,16 +142,41 @@ export const SubTitle = styled.div`
     font-size: 12px;
   }
 `;
-
 export const Description = styled.div`
-  line-height: 1.4;
-  font-size: 20px;
-  padding: 16px 0px;
-  color: rgb(249, 249, 249);
-
-  @media (max-width: 768px) {
-    font-size: 14px;
+  width: 416x;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  height: 92px;
+  box-sizing: border-box;
+  p {
+    display: -webkit-box;
+    height: 72px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 416x;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.84);
+    overflow-wrap: break-word;
   }
 `;
 
+export const AboutMovie = styled.div`
+  box-sizing: border-box;
+  display: block;
+  height: 28px;
+  padding-top: 24px;
+  line-height: 24px;
+  width: 416px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 600;
+`;
 
+export const More = styled.div`
+  top: 100vh;
+  display: flex;
+  flex-direction: column;
+`;

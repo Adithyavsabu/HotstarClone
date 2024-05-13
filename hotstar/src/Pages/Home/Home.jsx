@@ -5,6 +5,7 @@ import { PreviewDetails } from "../../Components/PreviewDetails/PreviewDetails";
 import MovieList from "../../Components/MovieList/MovieList";
 import { Container, ScrollDiv } from "./Home.style";
 import { getMovies } from "../../api/getMovies";
+import { PreviewProvider } from "../../context/PreviewContext";
 
 const Home = () => {
   const [familyGenre, setFamily] = useState([]);
@@ -21,17 +22,19 @@ const Home = () => {
   }, []);
 
   return (
-    <ScrollDiv>
-      <TrailerPreview />
-      <PreviewDetails />
-      <MovieList
-        // movies={movies}
-        familyGenre={familyGenre}
-        horrorGenre={horrorGenre}
-        mysteryGenre={mysteryGenre}
-        dramaGenre={dramaGenre}
-      />
-    </ScrollDiv>
+    <PreviewProvider>
+      <ScrollDiv>
+        <TrailerPreview />
+        <PreviewDetails />
+        <MovieList
+          // movies={movies}
+          familyGenre={familyGenre}
+          horrorGenre={horrorGenre}
+          mysteryGenre={mysteryGenre}
+          dramaGenre={dramaGenre}
+        />
+      </ScrollDiv>
+    </PreviewProvider>
   );
 };
 

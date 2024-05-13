@@ -13,7 +13,10 @@ import {
   Trailer,
   SubTitle,
   Description,
+  AboutMovie,
+  More,
 } from "./Details.Style";
+import { Dot, Pipe } from "../../common/styles";
 
 const Detail = (props) => {
   const { id } = useParams();
@@ -38,9 +41,24 @@ const Detail = (props) => {
       </Background>
       <MovieDetails>
         <Details>
-          <ImageTitle>
+          <h1>{detailData.title} </h1>
+          {/* <ImageTitle>
             <img alt="no pic" src={detailData.titleImg} />
-          </ImageTitle>
+          </ImageTitle> */}
+          <AboutMovie>
+            <span>2h 30m</span> <Dot />
+            <span> 1 Season</span>
+          </AboutMovie>
+          <Description>
+            <p>
+              Three teenagers reaches Bangalore for their engineering degree and
+              gets involved in a fight with seniors. They find a local gangster
+              named Ranga to help them take revenge.{" "}
+            </p>
+          </Description>
+          <AboutMovie>
+            <span>Drama</span> &nbsp; <Pipe /> &nbsp; <span>Controversial</span>
+          </AboutMovie>
           <ContentMeta>
             <Controls>
               <Player>

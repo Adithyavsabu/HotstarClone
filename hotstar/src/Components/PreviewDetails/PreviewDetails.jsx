@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { styled } from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,18 +17,28 @@ import {
   AboutMovie,
   Description,
 } from "./PreviewDetails.style";
+import { default as data } from "../../data/Preview";
+
+import { PreviewContext } from "../../context/PreviewContext";
 
 export const PreviewDetails = () => {
+  const { PreviewMovie, setPreviewMovie } = useContext(PreviewContext);
+
+  const handleImageClick = (movie) => {
+    setPreviewMovie(movie);
+  };
+
   let settings = {
     infinite: false,
     speed: 500,
     slidesToShow: 5.5,
     slidesToScroll: 5.5,
-    autoplay: false,
+    autoplay: true,
     variableWidth: false,
     centerMode: false,
     arrows: true,
   };
+
   return (
     <PreviewContent>
       <MovieDetails>
@@ -73,56 +83,13 @@ export const PreviewDetails = () => {
         </MuteButton>
         <Container>
           <Carousel {...settings}>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
-            <Wrap>
-              <a>
-                <img src="/images/aavesham.jpeg" alt="" />
-              </a>
-            </Wrap>
+            {data.map((movie) => (
+              <Wrap key={movie.id}>
+                <a onClick={() => handleImageClick(movie)}>
+                  <img src={movie.thumbnail} alt="" />
+                </a>
+              </Wrap>
+            ))}
           </Carousel>
         </Container>
       </RightDiv>
