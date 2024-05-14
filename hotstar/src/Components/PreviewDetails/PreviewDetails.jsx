@@ -24,6 +24,10 @@ import { PreviewContext } from "../../context/PreviewContext";
 export const PreviewDetails = () => {
   const { PreviewMovie, setPreviewMovie } = useContext(PreviewContext);
 
+  useEffect(() => {
+    setPreviewMovie(data[0]);
+  }, []);
+
   const handleImageClick = (movie) => {
     setPreviewMovie(movie);
   };
@@ -33,10 +37,11 @@ export const PreviewDetails = () => {
     speed: 500,
     slidesToShow: 5.5,
     slidesToScroll: 5.5,
-    autoplay: true,
+    autoplay: false,
     variableWidth: false,
     centerMode: false,
     arrows: true,
+    initialSlide: 0,
   };
 
   return (
@@ -83,8 +88,8 @@ export const PreviewDetails = () => {
         </MuteButton>
         <Container>
           <Carousel {...settings}>
-            {data.map((movie) => (
-              <Wrap key={movie.id}>
+            {data.map((movie, index) => (
+              <Wrap key={index}>
                 <a onClick={() => handleImageClick(movie)}>
                   <img src={movie.thumbnail} alt="" />
                 </a>
@@ -139,11 +144,11 @@ const Carousel = styled(Slider)`
   }
 
   .slick-prev {
-    left: -75px;
+    left: -65px;
   }
 
   .slick-next {
-    right: -75px;
+    right: -65px;
   }
 
   .slick-next,

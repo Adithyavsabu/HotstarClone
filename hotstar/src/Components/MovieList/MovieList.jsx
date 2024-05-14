@@ -32,10 +32,6 @@ const MovieList = ({
       <Moviecontainer>
         <Recommend>
           {/* <h4>Latest Releases</h4> */}
-          <Slider movies={data} genre="" heading="Latest Releases" />
-        </Recommend>
-        <Recommend>
-          {/* <h4>Latest Releases</h4> */}
           <Slider movies={familyMovies} genre="family" heading="Family" />
         </Recommend>
         <Recommend>

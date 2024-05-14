@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import ReactDom from "react-dom";
 import { Overlay, ModalContainer, Heading } from "./Modal.Style";
 import { FavouriteContext } from "../../context/FavouriteContext";
-import ImgSlider from "../MovieCarousel/Slider";
+import ModalSlider from "../ModalSlider/ModalSlider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,7 +25,7 @@ const Modal = ({ open, onClose }) => {
             />
           </button>
         </Heading>
-        <ImgSlider movies={selectedMovies} />
+        <ModalSlider movies={selectedMovies} />
       </ModalContainer>
     </>,
     document.getElementById("portal")
