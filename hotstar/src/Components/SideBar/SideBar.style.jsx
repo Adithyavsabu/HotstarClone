@@ -63,6 +63,11 @@ export const Logo = styled.a`
         rgb(255, 204, 117) 44.93%,
         rgb(255, 228, 144)
       );
+      /* background: linear-gradient(
+        to right,
+        rgba(4, 7, 20, 0.95) 20%,
+        transparent 100%
+      ); */
       color: rgb(255, 204, 117);
       font-size: 12px;
       font-weight: 500;
@@ -94,9 +99,9 @@ export const Nav = styled.aside`
   &:hover {
     width: 506px;
     background: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.8) 100%
+      to right,
+      rgba(4, 7, 20, 0.99) 60%,
+      transparent 100%
     );
   }
 `;
@@ -106,8 +111,10 @@ export const Badge = styled.div`
   border-radius: 80%;
   background-color: red;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-left: 15px;
   font-size: 14px;
+  position: absolute;
 `;
 
 export const NavMenu = styled.div`
