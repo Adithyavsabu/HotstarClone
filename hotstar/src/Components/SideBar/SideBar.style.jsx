@@ -101,6 +101,7 @@ export const Nav = styled.aside`
     background: linear-gradient(
       to right,
       rgba(4, 7, 20, 0.99) 60%,
+
       transparent 100%
     );
   }
